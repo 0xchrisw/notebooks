@@ -2,3 +2,8 @@
 
 __private__/
 
+# Node
+node_modules/
+
+# Python
+
