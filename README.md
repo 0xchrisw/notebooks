@@ -1,2 +1,4 @@
-# notebooks
- Ideas, experiments, and failure
+# Personal Notebooks
+
+Ideas, Experiments, and Failures
+
