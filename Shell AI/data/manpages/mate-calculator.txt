@@ -1,0 +1,60 @@
+MATE-CALC(1)		    General Commands Manual		  MATE-CALC(1)
+
+NAME
+       mate-calc - (mate-calculator) - The MATE Desktop Environment Calculator
+
+SYNOPSIS
+       mate-calc [OPTIONS...] [FILES...]
+
+DESCRIPTION
+       mate-calc is the official calculator for the MATE Desktop Environment.
+       It has been designed to be used with either the mouse or the keyboard.
+       It is visually similar to a lot of hand-held calculators.
+
+       This manual page briefly documents the mate-calc command.
+
+OPTIONS
+       -s, --solve <equation>
+	      Solve the equation provided following this option.
+
+       --version
+	      Output version information and exit.
+
+       -h, -?, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       mate-calc -s 4*10.5
+	   Multiply 4 by 10.5
+
+       mate-calc -s 21+21
+	   Add 21 plus 21
+
+       mate-calc --solve '((5.25×4)×2)'
+	   Multiply 5.25 by 4 and their product by 2
+
+       mate-calc
+	   Open the Calculator GUI.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-calc/issues
+
+AUTHORS
+   This Man Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   mate-calc documentation can be found from the "Help" menu, or by pressing
+       the F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+       mate-calc-cmd(1)
+
+MATE Desktop Environment	1 February 2014 		  MATE-CALC(1)

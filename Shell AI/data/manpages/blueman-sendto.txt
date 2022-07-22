@@ -1,0 +1,20 @@
+BLUEMAN-SENDTO(1)	    General Commands Manual	     BLUEMAN-SENDTO(1)
+
+NAME
+       blueman-sendto - application for sending files to bluetooth devices
+
+SYNOPSIS
+       blueman-sendto [options]
+
+DESCRIPTION
+       blueman-sendto sends files to specified device, if there is no device
+       specified, it will display a dialog to choose from all known devices.
+
+OPTIONS
+       --device=ADDRESS
+	      Address of the device to send to
+
+AUTHOR
+       Valmantas Paliksa
+
+				     LOCAL		     BLUEMAN-SENDTO(1)

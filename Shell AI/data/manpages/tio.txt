@@ -1,0 +1,137 @@
+tio(1)			    General Commands Manual			tio(1)
+
+NAME
+       tio - a simple TTY terminal I/O application
+
+SYNOPSIS
+       tio [<options>] <tty-device>
+
+DESCRIPTION
+       tio is a simple TTY terminal application which features a
+       straightforward commandline interface to easily connect to TTY devices
+       for basic input/output.
+
+OPTIONS
+       -b, --baudrate <bps>
+
+	      Set baud rate [bps] (default: 115200).
+
+       -d, --databits 5|6|7|8
+
+	      Set data bits (default: 8).
+
+       -f, --flow hard|soft|none
+
+	      Set flow control (default: none).
+
+       -s, --stopbits 1|2
+
+	      Set stop bits (default: 1).
+
+       -p, --parity odd|even|none
+
+	      Set parity (default: none).
+
+       -o, --output-delay <ms>
+
+	      Set output delay [ms] inserted between each sent character
+	      (default: 0).
+
+       -n, --no-autoconnect
+
+	      Disable automatic connect.
+
+	      By default tio automatically connects to the provided device if
+	      present. If the device is not present, it will wait for it to
+	      appear and then connect. If the connection is lost (eg. device
+	      disconnects), it will wait for the device to reappear and then
+	      reconnect.
+
+	      However, if the --no-autoconnect option is provided, tio will
+	      exit if the device is not present or an established connection
+	      is lost.
+
+       -e, --local-echo
+
+	      Enable local echo.
+
+       -l, --log <filename>
+
+	      Log to file.
+
+       -m, --map <flags>
+
+	      Map (replace, translate) special characters on input or output.
+	      The following mapping flags are supported:
+
+	      ICRNL	  Map CR to NL on input (unless IGNCR is set).
+
+	      IGNCR	  Ignore CR on input.
+
+	      INLCR	  Map NL to CR on input.
+
+	      INLCRNL	  Map NL to CR-NL on input.
+
+	      OCRNL	  Map CR to NL on output.
+
+	      ODELBS	  Map DEL to BS on output.
+
+	      ONLCRNL	  Map NL to CR-NL on output.
+
+	      If defining more than one flag, the flags must be comma
+	      separated.
+
+       -v, --version
+
+	      Display program version.
+
+       -h, --help
+
+	      Display help.
+
+KEYS
+       In session, the following key sequences are intercepted as tio
+       commands:
+
+       ctrl-t ?        List available key commands
+
+       ctrl-t b        Send serial break (triggers SysRq on Linux, etc.)
+
+       ctrl-t c        Show configuration (baudrate, databits, etc.)
+
+       ctrl-t e        Toggle local echo mode
+
+       ctrl-t h        Toggle hexadecimal mode
+
+       ctrl-t l        Clear screen
+
+       ctrl-t q        Quit
+
+       ctrl-t s        Show TX/RX statistics
+
+       ctrl-t t        Send ctrl-t key code
+
+EXAMPLES
+       Typical use is without options. For example:
+
+	      tio /dev/ttyUSB0
+
+       Which corresponds to the commonly used options:
+
+	      tio -b 115200 -d 8 -f none -s 1 -p none /dev/ttyUSB0
+
+       It is recommended to connect serial tty devices by ID. For example:
+
+	      tio /dev/serial/by-id/usb-FTDI_TTL232R-3V3_FTGQVXBL-if00-port0
+
+       Using serial devices by ID ensures that tio automatically reconnects to
+       the correct serial device if the device is disconnected and then
+       reconnected.
+
+WEBSITE
+       Visit https://tio.github.io
+
+AUTHOR
+       Written by Martin Lund <martin.lund@keep-it-simple.com>.
+
+				   June 2018				tio(1)

@@ -1,0 +1,6 @@
+BLUEMAN-TRAY(1) 	    General Commands Manual	       BLUEMAN-TRAY(1)
+
+NAME
+       blueman-tray - a status icon application for blueman
+
+				     LOCAL		       BLUEMAN-TRAY(1)

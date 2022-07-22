@@ -1,0 +1,51 @@
+MARCO-MESSAGE(1)	    General Commands Manual	      MARCO-MESSAGE(1)
+
+NAME
+       marco-message - A command to send messages to Marco.
+
+SYNOPSIS
+       marco-message [OPTIONS]
+
+DESCRIPTION
+       The marco-message command is used to perform some simple window manager
+       tasks while Marco is running.
+
+OPTIONS
+       restart
+	      Restart a currently running instance of marco.
+
+       reload-theme
+	      Reload the current window border theme specified in the dconf
+	      database. (/org/mate/marco/general/theme)
+
+       enable-keybindings
+	      Enable all keybindings specified in the dconf database.
+	      (/org/mate/marco/)
+
+       disable-keybindings
+	      Disable all keybindings specified in the dconf database.
+	      (/org/mate/marco/)
+
+       toggle-verbose
+	      Enable or Disable debugging messages for marco.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/marco/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   Portions of this manpage were originally written for the Debian GNU/Linux
+       system by:
+       Akira TAGOH <tagoh@debian.org> (2002)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       marco(1), marco-theme-viewer(1), marco-window-demo(1)
+
+MATE Desktop Environment	8 February 2014 	      MARCO-MESSAGE(1)

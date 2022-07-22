@@ -1,0 +1,32 @@
+MARCO-WINDOW-DEMO(1)	    General Commands Manual	  MARCO-WINDOW-DEMO(1)
+
+NAME
+       marco-window-demo - demo of window features
+
+SYNOPSIS
+       marco-window-demo
+
+DESCRIPTION
+       This program demonstrates various kinds of windows that window managers
+       and window manager themes should handle.
+
+       Be sure to tear off the menu and toolbar, those are also a special kind
+       of window.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/marco/issues
+
+AUTHORS
+   This Manual page was originally written for the Debian GNU/Linux system by:
+       Jose M. Moya <josem@die.upm.es> (2004)
+
+   It has been updated for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       xorg(1), marco(1), marco-message(1), marco-theme-viewer(1).
+
+MATE Desktop Environment	9 February 2014 	  MARCO-WINDOW-DEMO(1)

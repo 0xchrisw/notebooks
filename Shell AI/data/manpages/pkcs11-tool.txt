@@ -1,0 +1,296 @@
+PKCS11-TOOL(1)			 OpenSC Tools			PKCS11-TOOL(1)
+
+NAME
+       pkcs11-tool - utility for managing and using PKCS #11 security tokens
+
+SYNOPSIS
+       pkcs11-tool [OPTIONS]
+
+DESCRIPTION
+       The pkcs11-tool utility is used to manage the data objects on smart
+       cards and similar PKCS #11 security tokens. Users can list and read
+       PINs, keys and certificates stored on the token. User PIN
+       authentication is performed for those operations that require it.
+
+OPTIONS
+       --attr-from filename
+	   Extract information from filename (DER-encoded certificate file)
+	   and create the corresponding attributes when writing an object to
+	   the token. Example: the certificate subject name is used to create
+	   the CKA_SUBJECT attribute.
+
+       --change-pin, -c
+	   Change the user PIN on the token
+
+       --unlock-pin
+	   Unlock User PIN (without --login unlock in logged in session;
+	   otherwise --login-type has to be 'context-specific').
+
+       --hash, -h
+	   Hash some data.
+
+       --hash-algorithm mechanism
+	   Specify hash algorithm used with RSA-PKCS-PSS signature or RSA-OAEP
+	   decryption. Allowed values are "SHA-1", "SHA256", "SHA384",
+	   "SHA512", and some tokens may also allow "SHA224". Default is
+	   "SHA-1".
+
+	   Note that the input to RSA-PKCS-PSS has to be of the size equal to
+	   the specified hash algorithm. E.g., for SHA256 the signature input
+	   must be exactly 32 bytes long (for mechanisms SHA256-RSA-PKCS-PSS
+	   there is no such restriction). For RSA-OAEP, the plaintext input
+	   size mLen must be at most keyLen - 2 - 2*hashLen. For example, for
+	   RSA 3072-bit key and SHA384, the longest plaintext to encrypt with
+	   RSA-OAEP is (with all sizes in bytes): 384 - 2 - 2*48 = 286, aka
+	   286 bytes.
+
+       --id id, -d id
+	   Specify the id of the object to operate on.
+
+       --init-pin
+	   Initializes the user PIN. This option differs from --change-pin in
+	   that it sets the user PIN for the first time. Once set, the user
+	   PIN can be changed using --change-pin.
+
+       --init-token
+	   Initialize a token: set the token label as well as a Security
+	   Officer PIN (the label must be specified using --label).
+
+       --input-file filename, -i filename
+	   Specify the path to a file for input.
+
+       --keypairgen, -k
+	   Generate a new key pair (public and private pair.)
+
+       --keygen
+	   Generate a new key.
+
+       --key-type specification
+	   Specify the type and length of the key to create, for example
+	   rsa:1024 or EC:prime256v1.
+
+       --usage-sign
+	   Specify 'sign' key usage flag (sets SIGN in privkey, sets VERIFY in
+	   pubkey).
+
+       --usage-decrypt
+	   Specify 'decrypt' key usage flag (RSA only, set DECRYPT privkey,
+	   ENCRYPT in pubkey).
+
+       --usage-derive
+	   Specify 'derive' key usage flag (EC only).
+
+       --label name, -a name
+	   Specify the name of the object to operate on (or the token label
+	   when --init-token is used).
+
+       --list-mechanisms, -M
+	   Display a list of mechanisms supported by the token.
+
+       --list-objects, -O
+	   Display a list of objects.
+
+       --list-slots, -L
+	   Display a list of available slots on the token.
+
+       --list-token-slots, -T
+	   List slots with tokens.
+
+       --login, -l
+	   Authenticate to the token before performing other operations. This
+	   option is not needed if a PIN is provided on the command line.
+
+       --login-type
+	   Specify login type ('so', 'user', 'context-specific';
+	   default:'user').
+
+       --mechanism mechanism, -m mechanism
+	   Use the specified mechanism for token operations. See -M for a list
+	   of mechanisms supported by your token. The mechanism can also be
+	   specified in hexadecimal, e.g., 0x80001234.
+
+       --mgf function
+	   Use the specified Message Generation Function (MGF) function for
+	   RSA-PKCS-PSS signatures or RSA-OAEP decryptions. Supported
+	   arguments are MGF1-SHA1 to MGF1-SHA512 if supported by the driver.
+	   The default is based on the hash selection.
+
+       --module mod
+	   Specify a PKCS#11 module (or library) to load.
+
+       --moz-cert filename, -z filename
+	   Test a Mozilla-like keypair generation and certificate request.
+	   Specify the filename to the certificate file.
+
+       --output-file filename, -o filename
+	   Specify the path to a file for output.
+
+       --pin pin, -p pin
+	   Use the given pin for token operations. If set to env:VARIABLE, the
+	   value of the environment variable VARIABLE is used. WARNING: Be
+	   careful using this option as other users may be able to read the
+	   command line from the system or if it is embedded in a script. If
+	   set to env:VARIABLE, the value of the environment variable VARIABLE
+	   is used.
+
+	   This option will also set the --login option.
+
+       --puk puk
+	   Supply User PUK on the command line.
+
+       --new-pin pin
+	   Supply new User PIN on the command line.
+
+       --sensitive
+	   Set the CKA_SENSITIVE attribute (object cannot be revealed in
+	   plaintext).
+
+       --extractable
+	   Set the CKA_EXTRACTABLE attribute (object can be extracted)
+
+       --set-id id, -e id
+	   Set the CKA_ID of the object.
+
+       --show-info, -I
+	   Display general token information.
+
+       --sign, -s
+	   Sign some data.
+
+       --decrypt,
+	   Decrypt some data.
+
+       --derive,
+	   Derive a secret key using another key and some data.
+
+       --derive-pass-der,
+	   Derive ECDHpass DER encoded pubkey for compatibility with some
+	   PKCS#11 implementations
+
+       --salt-len bytes
+	   Specify how many bytes of salt should be used in RSA-PSS
+	   signatures. Accepts two special values: "-1" means salt length
+	   equals to digest length, "-2" means use maximum permissible length.
+	   Default is digest length (-1).
+
+       --slot id
+	   Specify the id of the slot to use.
+
+       --slot-description description
+	   Specify the description of the slot to use.
+
+       --slot-index index
+	   Specify the index of the slot to use.
+
+       --object-index index
+	   Specify the index of the object to use.
+
+       --token-label label
+	   Specify the label of token. Will be used the first slot, that has
+	   the inserted token with this label.
+
+       --so-pin pin
+	   Use the given pin as the Security Officer PIN for some token
+	   operations (token initialization, user PIN initialization, etc). If
+	   set to env:VARIABLE, the value of the environment variable VARIABLE
+	   is used. The same warning as --pin also applies here.
+
+       --test, -t
+	   Perform some tests on the token. This option is most useful when
+	   used with either --login or --pin.
+
+       --test-hotplug
+	   Test hotplug capabilities (C_GetSlotList + C_WaitForSlotEvent).
+
+       --private
+	   Set the CKA_PRIVATE attribute (object is only viewable after a
+	   login).
+
+       --always-auth
+	   Set the CKA_ALWAYS_AUTHENTICATE attribute to a private key object.
+	   If set, the user has to supply the PIN for each use (sign or
+	   decrypt) with the key.
+
+       --allowed-mechanisms mechanisms
+	   Sets the CKA_ALLOWED_MECHANISMS attribute to a key objects when
+	   importing an object or generating a keys. The argument accepts
+	   comma-separated list of algorithmsm, that can be used with the
+	   given key.
+
+       --test-ec
+	   Test EC (best used with the --login or --pin option).
+
+       --test-fork
+	   Test forking and calling C_Initialize() in the child.
+
+       --type type, -y type
+	   Specify the type of object to operate on. Valid value are cert,
+	   privkey, pubkey, secrkey and data.
+
+       --verbose, -v
+	   Cause pkcs11-tool to be more verbose.
+
+	   NB! This does not affect OpenSC debugging level! To set OpenSC
+	   PKCS#11 module into debug mode, set the OPENSC_DEBUG environment
+	   variable to a non-zero number.
+
+       --verify,
+	   Verify signature of some data.
+
+       --read-object, -r
+	   Get object's CKA_VALUE attribute (use with --type).
+
+       --delete-object, -b
+	   Delete an object.
+
+       --application-label label
+	   Specify the application label of the data object (use with --type
+	   data).
+
+       --application-id id
+	   Specify the application ID of the data object (use with --type
+	   data).
+
+       --issuer data
+	   Specify the issuer in hexadecimal format (use with --type cert).
+
+       --subject data
+	   Specify the subject in hexadecimal format (use with --type
+	   cert/privkey/pubkey).
+
+       --signature-file filename
+	   The path to the signature file for signature verification
+
+       --signature-format format
+	   Format for ECDSA signature: 'rs' (default), 'sequence', 'openssl'.
+
+       --write-object filename, -w filename
+	   Write a key or certificate object to the token.  filename points to
+	   the DER-encoded certificate or key file.
+
+       --generate-random num
+	   Get num bytes of random data.
+
+EXAMPLES
+       To list all certificates on the smart card:
+
+	   pkcs11-tool --list-objects --type cert
+
+       To read the certificate with ID KEY_ID in DER format from smart card:
+
+	   pkcs11-tool --read-object --id KEY_ID --type cert --output-file cert.der
+
+       To convert the certificate in DER format to PEM format, use OpenSSL
+       tools:
+
+	   openssl x509 -inform DER -in cert.der -outform PEM > cert.pem
+
+       To sign some data stored in file data using the private key with ID ID
+       and using the RSA-PKCS mechanism:
+
+	   pkcs11-tool --sign --id ID --mechanism RSA-PKCS --input-file data --output-file data.sig
+
+AUTHORS
+       pkcs11-tool was written by Olaf Kirch <okir@suse.de>.
+
+opensc				  01/28/2020			PKCS11-TOOL(1)

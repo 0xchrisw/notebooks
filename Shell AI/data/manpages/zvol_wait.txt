@@ -1,0 +1,19 @@
+ZVOL_WAIT(1)		    System Manager's Manual		  ZVOL_WAIT(1)
+
+NAME
+     zvol_wait — Wait for ZFS volume links in /dev to be created.
+
+SYNOPSIS
+     zvol_wait
+
+DESCRIPTION
+     When a ZFS pool is imported, ZFS will register each ZFS volume (zvol) as
+     a disk device with the system. As the disks are registered, udev(7) will
+     asynchronously create symlinks under /dev/zvol using the zvol's name.
+     zvol_wait will wait for all those symlinks to be created before
+     returning.
+
+SEE ALSO
+     udev(7)
+
+Linux				 July 5, 2019				 Linux

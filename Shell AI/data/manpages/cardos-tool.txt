@@ -1,0 +1,50 @@
+CARDOS-TOOL(1)			 OpenSC Tools			CARDOS-TOOL(1)
+
+NAME
+       cardos-tool - displays information about Card OS-based security tokens
+       or format them
+
+SYNOPSIS
+       cardos-tool [OPTIONS]
+
+DESCRIPTION
+       The cardos-tool utility is used to display information about smart
+       cards and similar security tokens based on Siemens Card/OS M4.
+
+OPTIONS
+       --card-driver name, -c name
+	   Use the card driver specified by name. The default is to
+	   auto-detect the correct card driver.
+
+       --format, -f
+	   Format the card or token.
+
+       --help, -h
+	   Print help message on screen.
+
+       --info, -i
+	   Display information about the card or token.
+
+       --reader arg, -r arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --startkey arg, -s arg
+	   Specify startkey for format.
+
+       --change-startkey arg, -S arg
+	   Change Startkey with given APDU command.
+
+       --verbose, -v
+	   Causes cardos-tool to be more verbose. Specify this flag several
+	   times to enable debug output in the opensc library.
+
+       --wait, -w
+	   Causes cardos-tool to wait for the token to be inserted into
+	   reader.
+
+AUTHORS
+       cardos-tool was written by Andreas Jellinghaus <aj@dungeon.inka.de>.
+
+opensc				  01/28/2020			CARDOS-TOOL(1)

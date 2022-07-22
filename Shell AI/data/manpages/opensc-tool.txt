@@ -1,0 +1,80 @@
+OPENSC-TOOL(1)			 OpenSC Tools			OPENSC-TOOL(1)
+
+NAME
+       opensc-tool - generic smart card utility
+
+SYNOPSIS
+       opensc-tool [OPTIONS]
+
+DESCRIPTION
+       The opensc-tool utility can be used from the command line to perform
+       miscellaneous smart card operations such as getting the card ATR or
+       sending arbitrary APDU commands to a card.
+
+OPTIONS
+       --version,
+	   Print the OpenSC package release version.
+
+       --atr, -a
+	   Print the Answer To Reset (ATR) of the card. Output is in hex byte
+	   format
+
+       --card-driver driver, -c driver
+	   Use the given card driver. The default is auto-detected.
+
+       --list-algorithms,
+	   Lists algorithms supported by card
+
+       --info, -i
+	   Print information about OpenSC, such as version and enabled
+	   components.
+
+       --list-drivers, -D
+	   List all installed card drivers.
+
+       --list-files, -f
+	   Recursively list all files stored on card.
+
+       --list-readers, -l
+	   List all configured readers.
+
+       --name, -n
+	   Print the name of the inserted card (driver).
+
+       --get-conf-entry conf, -G conf
+	   Get configuration key, format: section:name:key
+
+       --set-conf-entry conf, -S conf
+	   Set configuration key, format: section:name:key:value
+
+       --reader arg, -r arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --reset [type],
+	   Resets the card in reader. The default reset type is cold, but warm
+	   reset is also possible.
+
+       --send-apdu apdu, -s apdu
+	   Sends an arbitrary APDU to the card in the format
+	   AA:BB:CC:DD:EE:FF....
+
+       --serial
+	   Print the card serial number (normally the ICCSN). Output is in hex
+	   byte format
+
+       --verbose, -v
+	   Causes opensc-tool to be more verbose. Specify this flag several
+	   times to enable debug output in the opensc library.
+
+       --wait, -w
+	   Wait for a card to be inserted.
+
+SEE ALSO
+       opensc-explorer(1)
+
+AUTHORS
+       opensc-tool was written by Juha Yrjölä <juha.yrjola@iki.fi>.
+
+opensc				  01/28/2020			OPENSC-TOOL(1)

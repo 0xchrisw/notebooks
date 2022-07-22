@@ -1,0 +1,74 @@
+EVOLUTION(1)			     GNOME			  EVOLUTION(1)
+
+NAME
+       evolution - groupware suite for GNOME containing e-mail, calendar,
+       addressbook, to-do list and memo tools
+
+SYNOPSIS
+       evolution [OPTIONS] [MAILTO]
+
+DESCRIPTION
+       This manual page briefly introduces the evolution command.  Evolution
+       is a graphical groupware suite, a single application for reading and
+       sending e-mail and for managing calendars, address books, notes, to-do
+       lists and memos.  It is written for the GNOME graphical desktop.
+
+       An optional MAILTO expression can be specified, typically invoked from
+       another application. An example MAILTO expression is
+       `mailto:username@example.com`. This will open a new composer window
+       with an empty e-mail to `username@example.com`. More advanced
+       expressions are also supported, but should conform to RFC 2368.
+
+       For a more detailed explanation of Evolution, please see the Help menu.
+
+OPTIONS
+       -?, --help
+	      Show a help message listing all the options and their meanings.
+
+       -c, --component=COMPONENT
+	      Start Evolution by activating the desired component.  COMPONENT
+	      is one of `mail', `calendar', `contacts', `tasks' or `memos'.
+
+       --offline
+	      Start in offline mode.
+
+       --online
+	      Start in online mode.
+
+       --force-online
+	      Ignore network availability.
+
+       --force-shutdown
+	      Forcibly shut down all Evolution components.
+
+       --disable-eplugin
+	      Disable loading of any plugins.
+
+       --disable-preview
+	      Disable preview pane of Mail, Contacts and Tasks.
+
+       -i, --import
+	      Import URIs or file names given as rest of arguments.
+
+       -q, --quit
+	      Request a running Evolution process to quit.
+
+       --display=DISPLAY
+	      X display to use.
+
+	      In addition, the usual GTK+ and GNOME command line options
+	      apply.
+	      See the output of --help for details.
+
+SEE ALSO
+       http://projects.gnome.org/evolution/
+
+AUTHOR
+       Evolution was originally developed by the company Ximian, now a part of
+       Novell.	Evolution is now part of GNOME, and many people have touched
+       the code.  See the "About" item in the "Help" menu for a list.
+
+       This manual page was originally written by Lars Wirzenius for the
+       Debian system.
+
+GNOME				  2004-11-06			  EVOLUTION(1)

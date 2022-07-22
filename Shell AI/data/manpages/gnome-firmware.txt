@@ -1,0 +1,27 @@
+GNOME-FIRMWARE(1)		 User Commands		     GNOME-FIRMWARE(1)
+
+NAME
+       gnome-firmware - gnome-firmware
+
+DESCRIPTION
+   Usage:
+	      gnome-firmware [OPTION?] GNOME Firmware
+
+   Help Options:
+       -h, --help
+	      Show help options
+
+       --help-all
+	      Show all help options
+
+       --help-gtk
+	      Show GTK+ Options
+
+   Application Options:
+       -v, --verbose
+	      Show extra debugging information
+
+       --display=DISPLAY
+	      X display to use
+
+gnome-firmware 3.34.0		 January 2020		     GNOME-FIRMWARE(1)

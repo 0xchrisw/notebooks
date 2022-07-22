@@ -1,0 +1,21 @@
+AVR_MAN(1)		    General Commands Manual		    AVR_MAN(1)
+
+NAME
+       avr-man - a man(1) replacement to access the avr-libc manual pages
+
+SYNOPSIS
+	avr-man  [ OPTION ] page
+
+DESCRIPTION
+       avr-man is a wrapper script for man(1), displaying results for the
+       specified page from the manual pages shipped with the avr-libc package.
+
+       OPTION parameters are passed to man. It is included for backwards
+       compatibility. The recommended way to access these pages is now:
+
+	   man 3avr page
+
+SEE ALSO
+       man(1)
+
+				  2014-01-02			    AVR_MAN(1)

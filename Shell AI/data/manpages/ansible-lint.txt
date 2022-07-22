@@ -1,0 +1,86 @@
+ANSIBLE-LINT(1) 	System administration commands	       ANSIBLE-LINT(1)
+
+NAME
+       ansible-lint - lint tool for Ansible playbooks
+
+SYNOPSIS
+       ansible-lint [-M module_path] [-l] [-s] [module...]
+
+DESCRIPTION
+       ansible-lint checks Ansible playbooks for practices and behaviour that
+       could potentially be improved.
+
+OPTIONS
+       --version:
+
+       show program’s version number and exit
+
+       -M DIRECTORY, --module-path=DIRECTORY
+	   the DIRECTORY search path to load modules from. The default is
+	   /usr/share/ansible. This can also be set with the ANSIBLE_LIBRARY
+	   environment variable.
+
+       -s, --snippet=
+	   Produce a snippet which can be copied into a playbook for
+	   modification, like a kind of task template.
+
+       -l, --list=
+	   Produce a terse listing of modules and a short description of each.
+
+       -h, --help
+	   show this help message and exit
+
+       -L
+	   list all the rules
+
+       -q
+	   quieter, although not silent output
+
+       -p
+	   parseable output in the format of pep8
+
+       -r RULESDIR
+	   specify one or more rules directories using one or more -r
+	   arguments. Any -r flags override the default rules in
+	   /usr/lib/python3/dist-packages/ansiblelint/rules, unless -R is also
+	   used.
+
+       -R
+	   Use default rules in
+	   /usr/lib/python3/dist-packages/ansiblelint/rules in addition to any
+	   extra rules directories specified with -r. There is no need to
+	   specify this if no -r flags are used
+
+       -t TAGS
+	   only check rules whose id/tags match these values
+
+       -T
+	   list all the tags
+
+       -v
+	   Increase verbosity level
+
+       -x SKIP_LIST
+	   only check rules whose id/tags do not match these values
+
+       --nocolor
+	   disable colored output
+
+       --force-color
+	   Try force colored output (relying on ansible’s code)
+
+       --exclude=EXCLUDE_PATHS
+	   path to directories or files to skip. This option is repeatable.
+
+AUTHOR
+       ansible-lint was originally written by Will Thames
+
+COPYRIGHT
+       Copyright © 2013-2016 Will Thames <will@thames.id.au>
+
+       ansible-lint is released under the terms of the MIT License.
+
+SEE ALSO
+       ansible-playbook(1), ansible(1)
+
+ansible-lint			  08/12/2017		       ANSIBLE-LINT(1)

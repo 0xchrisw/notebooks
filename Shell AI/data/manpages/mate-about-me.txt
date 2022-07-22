@@ -1,0 +1,19 @@
+mate-about-me(1)	    General Commands Manual	      mate-about-me(1)
+
+NAME
+       mate-about-me — is a control center applet.
+
+SYNOPSIS
+       mate-about-me
+
+DESCRIPTION
+       MATE About Me is a control center applet to set user information.
+
+       It allows one to change user password and set user avatar image
+       (~/.face file).
+
+AUTHOR
+       This manual page was written by Stefano Karapetsas
+       <stefano@karapetsas.com>.
+
+							      mate-about-me(1)

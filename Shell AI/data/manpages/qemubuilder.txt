@@ -1,0 +1,155 @@
+qemubuilder(8)			   pbuilder			qemubuilder(8)
+
+NAME
+       qemubuilder - a pbuilder wrapper for qemu.
+
+SYNOPSIS
+       qemubuilder create [options]
+
+       qemubuilder update [options]
+
+       qemubuilder build [options] .dsc-file
+
+       qemubuilder login [options]
+
+       qemubuilder execute [options] -- script [script options]
+
+       qemubuilder dumpconfig
+
+DESCRIPTION
+       qemubuilder Executes the specified pbuilder operation with qemu
+
+COMMANDS
+       Most commands imitate pbuilder, see pbuilder manual for details.
+
+       --create, create
+	      Create the base.qemu image.
+
+       --update, update, up, u
+	      Update the base.qemu image.
+
+       --build, build, b
+	      Build a package given a .dsc file
+
+       --login, login, l
+	      Start a session within the base.qemu.
+
+       --execute, execute, e
+	      Execute a command within the base.qemu.
+
+       --dumpconfig, dumpconfig
+	      Dump configuration information, used for debugging.
+
+OPTIONS
+       Most options are the same as pbuilder, except for the following which
+       are handled specially.
+
+       --arch-diskdevice sd/hd
+	      Specify whether the disk device inside the virtual machine is
+	      called /dev/sda or /dev/hda. The possible values are 'sd' and
+	      'hd'.
+
+       --smp 2
+	      The option passed to SMP.
+
+       I don't think I can support bind-mounts in qemu.
+
+       Documentation here should be updated according to what's defined in
+       parameter.c, but it isn't.
+
+CONFIGURATION FILES
+       qemubuilder reads the following configuration files per default.
+
+       /usr/share/pbuilder/pbuilderrc
+	      Application default, not to be changed.
+
+       /etc/pbuilderrc
+	      System-wide default.
+
+       ~/.pbuilderrc
+	      User default
+
+       anything specified with --configfile option
+	      Additional configuration at runtime.
+
+CONFIGURATION FILE OPTIONS
+       The possible configuration options are as follows.  Others are ignored.
+
+       DISTRIBUTION=distribution
+
+       BUILDRESULT=directory
+
+       BUILDPLACE=directory
+
+       BASEPATH=path
+
+       MIRRORSITE=http://mirror
+
+       KERNEL_IMAGE=vmlinuz
+	      Linux kernel to use.
+
+       INITRD=initrd
+	      Initrd to use.
+
+       ARCHITECTURE=arch
+	      The target architecture.
+
+	      You can also use ARCH=arch for compatibility with 0.60 or older.
+
+       MEMORY_MEGS=256
+	      Memory size to use in qemu session, in MB.
+
+       ARCH_DISKDEVICE=hd
+	      The architecture-specific disk device specifier. Most arches use
+	      sd these days.  The only exceptions were i386 and amd64, which
+	      used to use hd.
+
+       SMP=2  The SMP option for qemu.
+
+EXAMPLES
+       qemubuilder create
+	      Create a base.qemu image.
+
+       qemubuilder update
+	      Update the base.qemu image.
+
+       qemubuilder build test_0.1.dsc
+	      Build the package specified in dsc file, with the base.qemu
+	      image.
+
+       pdebuild --pbuilder qemubuilder
+	      Run qemubuilder build against the current directory.  The
+	      current directory should be an extracted Debian source package
+	      directory.
+
+	      Edit /etc/pbuilderrc to have PDEBUILD_PBUILDER=qemubuilder to
+	      make this the default behavior for pdebuild.
+
+       qemubuilder create --distribution sid --basepath
+       /var/cache/pbuilder/base-test.qemu
+	      Create a base.qemu image with the path /var/cache/pbuilder/base-
+	      test.qemu and distribution sid.
+
+       Example pbuilderrc for i386
+	      KERNEL_IMAGE=vmlinuz-2.6.18-4-k7
+	      INITRD=initrd.img-2.6.18-4-k7
+	      ARCHITECTURE=i386
+	      BASEPATH=/home/dancer/tmp/base-i386.qemu
+	      MEMORY_MEGS=256
+
+       Note: INITRD may or may not be required for your system.  Debian
+       Installer initrd may or may not work depending on which one you choose,
+       use the one from an installed system.
+
+CAVEATS
+       Note that for mirror specification, http://localhost/debian/ usually
+       doesn't work, it will be searching for files on the virtual machine
+       itself, not the host OS.
+
+AUTHOR
+       Junichi Uekawa (dancer@debian.org)
+
+SEE ALSO
+       /usr/share/doc/pbuilder/pbuilder-doc.html, pbuilder(8), pdebuild(1)
+
+pbuilder			  2008 Aug 10			qemubuilder(8)

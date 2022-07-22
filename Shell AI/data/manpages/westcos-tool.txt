@@ -1,0 +1,92 @@
+WESTCOS-TOOL(1) 		 OpenSC Tools		       WESTCOS-TOOL(1)
+
+NAME
+       westcos-tool - utility for manipulating data structures on westcos
+       smart cards
+
+SYNOPSIS
+       westcos-tool [OPTIONS]
+
+DESCRIPTION
+       The westcos-tool utility is used to manipulate the westcos data
+       structures on 2 Ko smart cards / tokens. Users can create PINs, keys
+       and certificates stored on the card / token. User PIN authentication is
+       performed for those operations that require it.
+
+OPTIONS
+       --change-pin, -n
+	   Changes a PIN stored on the card. User authentication is required
+	   for this operation.
+
+       --certificate file, -t file
+	   Write certificate file file in PEM format to the card. User
+	   authentication is required for this operation.
+
+       --finalize, -f
+	   Finalize the card. Once finalized the default key is invalidated,
+	   so PIN and PUK cannot be changed anymore without user
+	   authentication.
+
+	   Warning, un-finalized cards are insecure because the PIN can be
+	   changed without user authentication (knowledge of default key is
+	   enough).
+
+       --generate-key, -g
+	   Generate a private key on the card. The card must not have been
+	   finalized and a PIN must be installed (i.e. the file for the PIN
+	   must have been created, see option -i). By default the key length
+	   is 1536 bits. User authentication is required for this operation.
+
+       --help, -h
+	   Print help message on screen.
+
+       --install-pin, -i
+	   Install PIN file in on the card. You must provide a PIN value with
+	   -x.
+
+       --key-length length, -l length
+	   Change the length of private key. Use with -g.
+
+       --overwrite-key, -o
+	   Overwrite the key if there is already a key on the card.
+
+       --pin-value value, -x value
+	   Set value of PIN. If set to env:VARIABLE, the value of the
+	   environment variable VARIABLE is used.
+
+       --puk-value value, -y value
+	   set value of PUK (or value of new PIN for change PIN command see
+	   -n). If set to env:VARIABLE, the value of the environment variable
+	   VARIABLE is used.
+
+       --read-file filename, -j filename
+	   Read the file filename from the card. The file is written on disk
+	   with name filename. User authentication is required for this
+	   operation.
+
+       --reader arg, -r arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --unblock-pin, -u
+	   Unblocks a PIN stored on the card. Knowledge of the PIN Unblock Key
+	   (PUK) is required for this operation.
+
+       --verbose -v
+	   Causes westcos-tool to be more verbose. Specify this flag several
+	   times to enable debug output in the OpenSC library.
+
+       --wait, -w
+	   Wait for a card to be inserted.
+
+       --write-file filename, -k filename
+	   Put the file with name filename from disk to card. On the card the
+	   file is written in filename. User authentication is required for
+	   this operation.
+
+AUTHORS
+       westcos-tool was written by Francois Leblanc
+       <francois.leblanc@cev-sa.com>.
+
+opensc				  01/28/2020		       WESTCOS-TOOL(1)

@@ -1,0 +1,27 @@
+ideviceenterrecovery(1)     General Commands Manual    ideviceenterrecovery(1)
+
+NAME
+       ideviceenterrecovery - Make a device enter recovery mode.
+
+SYNOPSIS
+       ideviceenterrecovery [OPTIONS] UDID
+
+DESCRIPTION
+       Makes a device with the supplied UDID enter recovery mode immediately.
+
+OPTIONS
+       -d, --debug
+	      enable communication debugging.
+
+       -h, --help
+	      prints usage information.
+
+AUTHORS
+       Martin Szulecki
+
+       Man page written to conform with Debian by Julien Lavergne.
+
+ON THE WEB
+       http://libimobiledevice.org
+
+						       ideviceenterrecovery(1)

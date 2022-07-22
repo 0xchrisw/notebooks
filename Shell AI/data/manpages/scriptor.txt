@@ -1,0 +1,68 @@
+SCRIPTOR(1p)							  SCRIPTOR(1p)
+
+NAME
+       scriptor - Perl script to send commands to a smart card
+
+SYNOPSIS
+       scriptor [-h] [-r reader] [-p protocol] [-u] [file]
+
+DESCRIPTION
+       This manual page documents briefly the scriptor command.
+
+       scriptor is a program that sends commands to a smart card using a batch
+       file or stdin.
+
+OPTIONS
+       A description of options is included below.
+
+       -h     Show summary of options.
+
+       -r reader
+	      Use the indicated reader. By default the first PC/SC reader is
+	      used.
+
+       -p protocol
+	      Use the indicated protocol. Accepted values are T=0 and T=1. By
+	      default T=0 is used.
+
+       -u     Use unbuffered stdout.
+
+       file   Use the file instead of stdin to read commands (APDUs)
+
+	      The commands are of the form:
+	       CLA INS P1 P2 Lc [data] [le]
+	       reset
+	       # comment
+
+	      Example:
+
+	       # reset the card
+	       reset
+
+	       # Select MF 3F00
+	       A0 A4 00 00 02 3F 00
+
+	       # Get Response
+	       # 17 is the value of second SW from the previous command
+	       A0 C0 00 00 17
+
+	       # Select DF Telecom (7F10)
+	       A0 A4 00 00 02 7F 10
+
+	       # Get Response
+	       A0 C0 00 00 17
+
+	       # Select EF_ADN (6F3A) (Abbreviated Dialing Numbers)
+	       A0 A4 00 00 02 6F 3A
+
+	       # Get Response
+	       A0 C0 00 00 0F
+
+SEE ALSO
+       pcscd(8),gscriptor(1)
+
+AUTHOR
+       This manual page was written by Ludovic Rousseau <rousseau@debian.org>,
+       for the Debian GNU/Linux system (but may be used by others).
+
+			       octobre 17, 2003 		  SCRIPTOR(1p)

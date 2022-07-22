@@ -1,0 +1,26 @@
+MATE-POWER-PREFERENCES(1)			     MATE-POWER-PREFERENCES(1)
+
+NAME
+       mate-power-preferences - MATE power preferences GUI
+
+SYNOPSIS
+       mate-power-preferences [ --verbose ] [ --help ]
+
+DESCRIPTION
+       mate-power-preferences is the gui program for the mate power management
+       infrastructure
+
+OPTIONS
+       --help Show summary of options.
+
+       --verbose
+	      Show extra debugging.
+
+SEE ALSO
+       mate-power-manager (1).
+
+AUTHOR
+       This manual page was written by Oliver Grawert <ogra@ubuntu.com> for
+       the Debian system.
+
+				 11 July, 2005	     MATE-POWER-PREFERENCES(1)

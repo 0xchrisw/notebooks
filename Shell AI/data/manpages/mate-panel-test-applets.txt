@@ -1,0 +1,56 @@
+MATE-PANEL-TEST-APPLETS(1)  General Commands Manual MATE-PANEL-TEST-APPLETS(1)
+
+NAME
+       mate-panel-test-applets - display and test installed applets
+
+SYNOPSIS
+       mate-panel-test-applets [OPTIONS]
+
+DESCRIPTION
+       mate-panel-test-applets display installed applets in a dialog box and
+       allow you to test them.
+
+OPTIONS
+       --iid  Specify an applet IID to load
+
+       --prefs-path
+	      Specify a gsettings path in which the applet preferences should
+	      be stored
+
+       --size Specify the initial size of the applet (xx-small, medium, large
+	      etc.)
+
+       --orient
+	      Specify the initial orientation of the applet (top, bottom, left
+	      or right)
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-panel/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+       This manual page was originally written by Christian Marillat
+       <marillat@debian.org> for the Debian GNU/Linux system. (2006)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-panel(1)
+
+MATE Desktop Environment	4 February 2014     MATE-PANEL-TEST-APPLETS(1)

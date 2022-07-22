@@ -1,0 +1,16 @@
+BLUEMAN-SENDTO(1)	    General Commands Manual	     BLUEMAN-SENDTO(1)
+
+NAME
+       blueman-adapters - an utility to set adapter properties
+
+SYNOPSIS
+       blueman-adapters [adapter]
+
+OPTIONS
+       adapter option is used to select initial tab in the dialog. Adapter
+       should be in the form of hci0, hci1 ... hciN
+
+AUTHOR
+       Valmantas Paliksa
+
+				     LOCAL		     BLUEMAN-SENDTO(1)

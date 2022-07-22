@@ -1,0 +1,35 @@
+mate-thumbnail-font(1)	    General Commands Manual	mate-thumbnail-font(1)
+
+NAME
+       mate-thumbnail-font - create font thumbnails
+
+SYNOPSIS
+       mate-thumbnail-font [-h|-t <TEXT> -s <SIZE>] <FONT_FILE> <OUTPUT_FILE>
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       mate-thumbnail-font is a command-line tool for creating thumbnails of
+       PCF fonts.
+
+OPTIONS
+       -h|--help
+	      Show some help text.
+
+       -t <TEXT>, --text <TEXT>
+	      Text to thumbnail (default: Aa).
+
+       -s <SIZE>, --size <SIZE>
+	      Font size (default: 64).
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), mate-font-viewer(1)
+
+MATE				  2014-05-02		mate-thumbnail-font(1)

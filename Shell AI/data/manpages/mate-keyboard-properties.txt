@@ -1,0 +1,42 @@
+mate-keyboard-properties(1) General Commands Manualmate-keyboard-properties(1)
+
+NAME
+       mate-keyboard-properties - manage keyboard behaviour in MATE
+
+SYNOPSIS
+       mate-keyboard-properties [OPTIONS...]
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       Keyboard Preferences manages all settings related to the keyboard in a
+       MATE environment. This includes key repeat delay, cursor blinking,
+       layouts and layout options. You can also configure a typing break which
+       locks the screen and enforces a break from work.
+
+OPTIONS
+       --apply
+	      Just apply settings and quit (compatibility only; now handled by
+	      daemon)
+
+       --init-session-settings
+	      Just apply settings and quit (compatibility only; now handled by
+	      daemon)
+
+       --get-legacy
+	      Retrieve and store legacy settings
+
+       --typing-break
+	      Start the page with the typing break settings showing
+
+       This program also accepts the standard MATE and GTK options.
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+SEE ALSO
+       mate-control-center(1), gtk-options(7)
+
+MATE				  2014-05-02	   mate-keyboard-properties(1)

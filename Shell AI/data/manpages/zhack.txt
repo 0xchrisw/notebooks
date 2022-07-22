@@ -1,0 +1,74 @@
+zhack(1)			 User Commands			      zhack(1)
+
+NAME
+       zhack - libzpool debugging tool
+
+DESCRIPTION
+       This utility pokes configuration changes directly into a ZFS pool,
+       which is dangerous and can cause data corruption.
+
+SYNOPSIS
+       zhack [-c cachefile] [-d dir] <subcommand> [arguments]
+
+OPTIONS
+       -c cachefile
+
+	      Read the pool configuration from the cachefile, which is
+	      /etc/zfs/zpool.cache by default.
+
+       -d dir
+
+	      Search for pool members in the dir path. Can be specified more
+	      than once.
+
+SUBCOMMANDS
+       feature stat pool
+
+	      List feature flags.
+
+       feature enable [-d description] [-r] pool guid
+
+	      Add a new feature to pool that is uniquely identified by guid,
+	      which is specified in the same form as a zfs(8) user property.
+
+	      The description is a short human readable explanation of the new
+	      feature.
+
+	      The -r switch indicates that pool can be safely opened in read-
+	      only mode by a system that does not have the guid feature.
+
+       feature ref [-d|-m] pool guid
+
+	      Increment the reference count of the guid feature in pool.
+
+	      The -d switch decrements the reference count of the guid feature
+	      in pool.
+
+	      The -m switch indicates that the guid feature is now required to
+	      read the pool MOS.
+
+EXAMPLES
+       # zhack feature stat tank
+
+       for_read_obj:
+	    org.illumos:lz4_compress = 0
+       for_write_obj:
+	    com.delphix:async_destroy = 0
+	    com.delphix:empty_bpobj = 0
+       descriptions_obj:
+	    com.delphix:async_destroy = Destroy filesystems asynchronously.
+	    com.delphix:empty_bpobj = Snapshots use less space.
+	    org.illumos:lz4_compress = LZ4 compression algorithm support.
+
+       # zhack feature enable -d 'Predict future disk failures.' \
+	   tank com.example:clairvoyance
+
+       # zhack feature ref tank com.example:clairvoyance
+
+AUTHORS
+       This man page was written by Darik Horn <dajhorn@vanadac.com>.
+
+SEE ALSO
+       zfs(8), zpool-features(5), ztest(1)
+
+ZFS on Linux			  2013 MAR 16			      zhack(1)

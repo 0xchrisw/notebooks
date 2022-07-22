@@ -1,0 +1,91 @@
+TILDA(1)			 User Commands			      TILDA(1)
+
+NAME
+       tilda - a highly configurable terminal emulator
+
+DESCRIPTION
+       Tilda is a terminal emulator which is highly configurable. The main
+       distinguishing feature of tilda is that it uses a configurable shortcut
+       to show and hide the tilda window. This allows users to quickly switch
+       between tilda and other windows only through keyboard shortcuts. When
+       tilda is hidden it will move outside of the screen until a shortcut is
+       pressed again to show the tilda window. The behaviour of tilda can be
+       configured using the preferences dialog that is available via the
+       context menu. A subset of the options can also be configured from the
+       command line as documented below.
+
+       Please note that currently command line options override the settings
+       in the configuration file and are persisted into the configuration
+       file.
+
+       Tilda is currently not officially supported on Wayland. Starting with
+       Tilda 1.5.0 it will be able to start under Wayland but the pull hotkey
+       will only work from other X11 windows but not when a native Wayland
+       window has the focus.
+
+   Usage:
+	      tilda [OPTION...]
+
+   Help Options:
+       -?, --help
+	      Show help options
+
+   Application Options:
+       -b, --background-color
+	      Set the background color
+
+       -c, --command
+	      Run a command at startup
+
+       -h, --hidden
+	      Start Tilda hidden
+
+       -f, --font
+	      Set the font to the following string
+
+       -l, --lines
+	      Scrollback Lines
+
+       -s, --scrollbar
+	      Use Scrollbar
+
+       -v, --version
+	      Print the version, then exit
+
+       -w, --working-dir
+	      Set Initial Working Directory
+
+       -x, --x-pos
+	      X Position
+
+       -y, --y-pos
+	      Y Position
+
+       -t, --background-alpha
+	      Opaqueness: 0-100%
+
+       -C, --config
+	      Show Configuration Wizard
+
+       --display=DISPLAY
+	      X display to use
+
+COPYRIGHT
+       Copyright © 2012,2020 Sebastian Geiger (lanoxx@gmx.net)
+       Copyright © 2005,2008 Tristan Sloughter (sloutri@iit.edu)
+       Copyright © 2005,2008 Ira W. Snyder (tilda@irasnyder.com)
+       Copyright © 2007,2008 Ken Dreyer (kdreyer@chicagolug.org)
+
+       This program comes with ABSOLUTELY NO WARRANTY.	This is free software,
+       and you are welcome to redistribute it under certain conditions. See
+       the file COPYING for details.
+
+BUGS
+       Please report bugs via Github at https://github.com/lanoxx/tilda/issues
+
+AUTHOR
+       This man page was originally written by Davide Truffa
+       <davide@catoblepa.org> and is currently being maintained by Sebastian
+       Geiger <lanoxx@gmx.net>.
+
+tilda 1.5.0			   Feb 2020			      TILDA(1)

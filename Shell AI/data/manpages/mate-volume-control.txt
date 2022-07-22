@@ -1,0 +1,56 @@
+MATE-VOLUME-CONTROL(1)	    General Commands Manual	MATE-VOLUME-CONTROL(1)
+
+NAME
+       mate-volume-control - The MATE Volume Control application
+
+SYNOPSIS
+       mate-volume-control [OPTIONS]
+
+DESCRIPTION
+       The MATE Volume Control application is an audio mixer that enables you
+       to mix audio and adjust volume levels of various audio mixer devices on
+       your system.
+
+OPTIONS
+       -b, --backend=pulse|alsa|oss|null
+	      Launch mate-volume-control with the selected sound system
+	      backend.
+
+       -d, --debug
+	      Enable debugging code.
+
+       -p, --page=effects|hardware|input|output|applications
+	      Launch mate-volume-control on the specified page/tab.
+
+       -v, --version
+	      Output version information and exit.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK+ options.
+
+       --help-gtk
+	      Print GTK+ options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-media/issues
+
+AUTHORS
+   This Manual Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   MATE Volume Control documentation can be found by clicking the "Help"
+       button, or by pressing the F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+MATE Desktop Environment       20 February 2014 	MATE-VOLUME-CONTROL(1)

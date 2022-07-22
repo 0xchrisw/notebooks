@@ -1,0 +1,37 @@
+
+mate-display-properties-instGenermate-display-properties-install-systemwide(1)
+
+NAME
+       mate-display-properties-install-systemwide - customize MATE display
+       behavor
+
+SYNOPSIS
+       mate-display-properties-install-systemwide <SOURCE_FILE> <DEST_NAME>
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       This command line tool installs a RANDR profile for multi-monitor
+       setups into a systemwide location.  The resulting profile will get used
+       when the RANDR plug-in gets run in mate-settings-daemon.
+
+       <SOURCE_FILE>
+	      a full pathname, typically /home/username/.config/monitors.xml
+
+       <DEST_NAME>
+	      relative name for the installed file.  This will get put in the
+	      systemwide directory for RANDR configurations, so the result
+	      will typically be /etc/mate-settings-daemon/xrandr/DEST_NAME
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), mate-display-properties(1), mate-settings-
+       daemon(1),
+
+MATE				 mate-display-properties-install-systemwide(1)

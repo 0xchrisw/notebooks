@@ -1,0 +1,60 @@
+BOGOLEXER(1)		  Bogofilter Reference Manual		  BOGOLEXER(1)
+
+NAME
+       bogolexer - Utility program for separating email messages into tokens
+
+SYNOPSIS
+       bogolexer [-p] [-q] [-h] [-n] [-v] [-x flags] [-c file] [-C] [-D]
+		 [-I file] [-O file] [-V]
+
+DESCRIPTION
+       Bogolexer is part of the bogofilter Bayesian spam filter package.
+
+       It is used to separate messages into tokens and to test new versions of
+       the lexer.l code.
+
+OPTIONS
+       The -p option tells bogolexer to print just the tokens read from stdin,
+       without any extra messages.
+
+       The -q option tells bogolexer to print a token count, without printing
+       the actual tokens.
+
+       The -h option prints the help message and exits.
+
+       The -n option tells bogolexer to map non-ascii characters to the
+       question point '?'.
+
+       The -v option increases the verbosity level.
+
+       The -x flags option allows setting of debug flags for printing debug
+       messages.
+
+       The -cfilename option tells bogolexer to read the config file named.
+
+       The -C option prevents bogolexer from reading configuration files.
+
+       The -D option redirects the debugging output to stdout (it defaults to
+       stderr).
+
+       The -I filename option tells bogolexer to read its input from the
+       specified file, rather than from stdin.
+
+       The -O filename option tells bogolexer to write its output to the
+       specified file, rather than to stdout.
+
+       The -V option prints the version number and exits.
+
+AUTHOR
+       The bogofilter developer team.
+
+       For updates, see the bogofilter project page[1].
+
+SEE ALSO
+       bogofilter(1), bogotune(1), bogoupgrade(1), bogoutil(1)
+
+NOTES
+	1. the bogofilter project page
+	   http://bogofilter.sourceforge.net/
+
+Bogofilter			  06/29/2013			  BOGOLEXER(1)

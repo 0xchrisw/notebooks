@@ -1,0 +1,24 @@
+MATE-MAXIMUS(1) 		 User Commands		       MATE-MAXIMUS(1)
+
+NAME
+       mate-maximus - force all windows to be full-screen
+
+SYNOPSIS
+       mate-maximus
+
+DESCRIPTION
+       This manual page documents briefly maximus.
+
+       mate-maximus is an X program for the MATE Desktop Environment that
+       forces all windows to be full-screen. This tool is shipped with the
+       MATE netbook utilities.
+
+OPTIONS
+       mate-maximus takes no command line arguments.
+
+AUTHOR
+       This man page has been written by Mike Gabriel
+       <mike.gabriel@das-netzwerkteam.de> for the Debian system and the MATE
+       Desktop project (and it may be used by others, as well).
+
+MATE							       MATE-MAXIMUS(1)

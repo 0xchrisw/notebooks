@@ -1,0 +1,85 @@
+mate-seahorse-tool(1)		     GNOME		 mate-seahorse-tool(1)
+
+NAME
+       mate-seahorse-tool - PGP/GnuPG file encryption for the GNOME Desktop
+
+SYNOPSIS
+       mate-seahorse-tool [ OPTION... ]
+
+DESCRIPTION
+       Seahorse is a GNOME application for managing encryption keys.  mate-
+       seahorse-tool allows you to encrypt, decrypt or sign files. It is
+       integrated into the caja right-click menu, but can also be used from
+       the command line.
+
+OPTIONS
+   Help options
+       -?, --help
+	      Show summary of all options and exit.
+
+       --usage
+	      Display brief usage message and exit.
+
+   Application options
+       -i FILE, --import FILE
+	      Import keys from the FILE.
+
+       -e FILE, --encrypt FILE
+	      Encrypt FILE.
+
+       -s FILE, --sign FILE
+	      Sign FILE with default key.
+
+       -n FILE, --encrypt-sign FILE
+	      Encrypt and sign FILE with default key.
+
+       -d FILE, --decrypt FILE
+	      Decrypt encrypted FILE.
+
+       -v FILE, --verify FILE
+	      Verify signature FILE.
+
+       -T, --uri-list
+	      Read list of URIs on standard in.
+
+       --version
+	      Show version information and exit.
+
+       -h, --help
+	      Show help options.
+
+   Additional options
+       In addition, the usual GTK+ and GNOME command line options apply. See
+       the output of --help for details.
+
+VERSION
+       This man page describes seahorse version 0.9.
+
+BUGS
+       If you find a bug, please report it at
+	http://bugzilla.gnome.org/enter_bug.cgi?product=seahorse.
+
+AUTHORS
+       Jacob Perkins <jap1@users.sourceforge.net>
+
+       Stef Walter <stef@memberwebs.com>
+
+       Adam Schreiber <sadam@clemson.edu>
+
+       This man page was originally written by Michael Mende
+       <debian@menole.net> for the Debian system.
+
+COPYRIGHT
+       Copyright (C) 2001, 2002 Jose Carlos Garcia Sogo
+       Copyright (C) 2002, 2003 Jacob Perkins
+       Copyright (C) 2004, 2006 Stef Walter, Adam Schreiber
+
+LICENSE
+       You are free to distribute this software under the terms of the GNU
+       General Public License.
+       Documentation and help files are covered by GFDL license.
+
+SEE ALSO
+       seahorse-daemon(1),
+
+seahorse			 May 04, 2006		 mate-seahorse-tool(1)

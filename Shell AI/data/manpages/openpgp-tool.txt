@@ -1,0 +1,82 @@
+OPENPGP-TOOL(1) 		 OpenSC Tools		       OPENPGP-TOOL(1)
+
+NAME
+       openpgp-tool - utility for accessing visible data OpenPGP smart cards
+       and compatible tokens
+
+SYNOPSIS
+       openpgp-tool [OPTIONS]
+
+DESCRIPTION
+       The openpgp-tool utility is used for accessing data from the OpenPGP
+       v1.1 and v2.0 smart cards and compatible tokens like e.g. GPF
+       CryptoStick v1.x, which might not be present in PKCS#15 objects but
+       available in custom files on the card. The data can be printed on
+       screen or used by other programs via environment variables.
+
+OPTIONS
+       --card-info, -C
+	   Show card information.
+
+       --del-key arg
+	   Delete key indicated by arg.  arg can be 1, 2, 3, or all.
+
+       --do arg, -d arg
+	   Dump private data object (DO) indicated by arg.  arg can be in the
+	   form x, 10x, or 010x to access DO 010x, where x is 1, 2, 3, or 4.
+
+       --erase, -E
+	   Erase (i.e. reset) the card.
+
+       --exec prog, -x prog
+	   Execute the given program with data in environment variables.
+
+       --gen-key arg, -G arg
+	   Generate key with the ID given as arg.  arg can be one of 1, 2, or
+	   3.
+
+       --help, -h
+	   Print help message on screen.
+
+       --key-info, -K
+	   Show information of keys on the card.
+
+       --key-type keytype, -t keytype
+	   Specify the type of the key to be generated. Supported values for
+	   keytype are rsa for RSA with 2048 bits, rsaLENGTH for RSA with a
+	   bit length of LENGTH. If not given, it defaults to rsa2048.
+
+       --pin string
+	   The PIN text to verify. If set to env:VARIABLE, the value of the
+	   environment variable VARIABLE is used.
+
+       --pretty
+	   Print values in pretty format.
+
+       --raw
+	   Print values in raw format, as they are stored on the card.
+
+       --reader arg, -r arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --user-info, -U
+	   Show card holder information.
+
+       --verify pintype
+	   Verify PIN (CHV1, CHV2 or CHV3).
+
+       --version, -V
+	   Print the version of the utility and exit.
+
+       --verbose, -v
+	   Verbose operation. Use several times to enable debug output.
+
+       --wait, -w
+	   Wait for a card to be inserted.
+
+AUTHORS
+       openpgp-tool utility was written by Peter Marschall <peter@adpm.de>.
+
+opensc				  01/28/2020		       OPENPGP-TOOL(1)

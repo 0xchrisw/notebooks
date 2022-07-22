@@ -1,0 +1,61 @@
+
+TELEGRAM-DESKTOP(1)	    General Commands Manual	   TELEGRAM-DESKTOP(1)
+
+NAME
+       telegram-desktop - fast and secure messaging application
+
+SYNOPSIS
+       telegram-desktop [-startintray] [-debug] [-scale INT] [-workdir PATH]
+			[-- URI]
+
+       telegram-desktop -autostart
+
+       telegram-desktop -cleanup
+
+DESCRIPTION
+       This manual page documents how to run Telegram Desktop, official
+       Telegram client.
+
+OPTIONS
+       Although the program is primarily a GUI application, it understands
+       various command line arguments, some of them are described in the
+       present document.
+
+       -autostart
+	      Apply automatic start. It works if only auto-starting is allowed
+	      in settings and the app is not locked by a passcode. Telegram
+	      will start minimized in the system tray if the corresponding
+	      checkbox has been set.
+
+       -startintray
+	      Do not show the main window, just start in the system tray.
+	      Useful for automatic unconditional launching.
+
+       -cleanup
+	      Remove an autostart shortcut effectively disabling the feature
+	      then exit.
+
+       -debug Run in debug mode immediately. See full logs in working
+	      directory or in standard location at
+	      ~/.local/share/TelegramDesktop/DebugLogs.
+
+       -scale INT
+	      Set initial interface scale factor. Possible values are measured
+	      in percents from 75 up to 300 inclusive. The application
+	      remembers last used value.
+
+       -workdir PATH
+	      Change current working directory to specified path before start.
+	      All Telegram data will be stored encrypted in this folder. It
+	      must exist before start. You can pass this option to partition
+	      different app instances that run in parallel.
+
+       URI    Specify Telegram link in tg:// scheme. Double dash is mandatory.
+	      This is for opening chats by t.me site.
+
+       There are also some other hidden options not intended for direct use.
+
+SEE ALSO
+       Wiki on GitHub ⟨https://github.com/telegramdesktop/tdesktop/wiki⟩
+
+				  2021-08-04		   TELEGRAM-DESKTOP(1)

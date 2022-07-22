@@ -1,0 +1,57 @@
+MARCO-THEME-VIEWER(1)	    General Commands Manual	 MARCO-THEME-VIEWER(1)
+
+NAME
+       marco-theme-viewer - Marco Theme Previewer
+
+SYNOPSIS
+       marco-theme-viewer [THEME]
+
+DESCRIPTION
+       marco-theme-viewer allows you to preview any installed Marco theme.
+
+       When designing a new Marco theme, you can use marco-theme-viewer to
+       benchmark the performance of a window frame, and to preview it around
+       different types of windows in various mock scenarios.
+
+USAGE
+       Usage of marco-theme-viewer is fairly simple.
+       Just call marco-theme-viewer followed by the Name of any valid Marco or
+       Metacity theme installed in "~/.themes" or "/usr/share/themes".
+       It is case-sensitive.
+
+EXAMPLE
+       marco-theme-viewer Crux
+	   Preview the Crux theme if it is installed.
+
+FILES
+       ~/.themes
+	   user themes directory
+
+       /usr/share/themes
+	   system themes directory
+
+       /usr/share/themes/*/metacity-1/metacity-theme-1.xml
+	 OR
+       /usr/share/themes/*/marco-1/marco-theme-1.xml
+	   theme specification files
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/marco/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   Portions of this manpage were originally written for the Debian GNU/Linux
+       system by:
+       Jose M. Moya <josem@die.upm.es> (2004)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       marco(1), marco-message(1), marco-window-demo(1)
+
+MATE Desktop Environment	9 February 2014 	 MARCO-THEME-VIEWER(1)

@@ -1,0 +1,83 @@
+MATE-SESSION-SAVE(1)	    General Commands Manual	  MATE-SESSION-SAVE(1)
+
+NAME
+       mate-session-save - End or save the current MATE session
+
+SYNOPSIS
+       mate-session-save [--logout] [--force-logout] [--logout-dialog]
+       [--shutdown-dialog] [--gui] [--kill [--silent]]
+
+DESCRIPTION
+       The mate-session-save program can be used from a MATE session to either
+       end the current MATE session or save a snapshot of the currently
+       running applications (but not both). This session will be later
+       restored at your next MATE session.
+
+USAGE
+       The --gui option will report errors in dialog boxes instead of printing
+       to stderr.
+
+       If called with the --logout option, the current MATE session will be
+       ended, unless logging out has been inhibited by an application. The
+       --force-logout option can be used to end the session regardless of the
+       inhibition state.
+
+       When the --logout-dialog option is given, the standard dialog
+       displaying logout options is displayed. When --shutdown-dialog option
+       is given, the standard dialog displaying shutdown options is displayed.
+
+       The --kill and --silent options are deprecated. The --kill option is
+       equivalent to the --logout-dialog option. If --silent is used with
+       --kill, then it will behave as if --logout was used.
+
+       The session is not saved when mate-session-save is called with any of
+       the options ending the session.
+
+OPTIONS
+       --logout
+	      Log out
+
+       --force-logout
+	      Log out, ignoring any existing inhibitors
+
+       --logout-dialog
+	      Show logout dialog
+
+       --shutdown-dialog
+	      Show shutdown dialog
+
+       --gui
+	      Use dialog boxes for errors
+
+       --display=DISPLAY
+	      X display to use.
+
+       --version
+	      Output version information and exit.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-session-manager/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   This Manual was originally written for gnome-session by:
+       Miguel de Icaza <miguel@helixcode.com> (2000)
+       Vincent Untz <vuntz@gnome.org> (2009-2010)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-session-properties(1), mate-wm(1), mate-session(1)
+
+MATE Desktop Environment       11 February 2014 	  MATE-SESSION-SAVE(1)

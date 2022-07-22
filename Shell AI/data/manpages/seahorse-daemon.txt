@@ -1,0 +1,65 @@
+seahorse-daemon(1)		     GNOME		    seahorse-daemon(1)
+
+NAME
+       seahorse-daemon - seahorse pass phrase caching agent
+
+SYNOPSIS
+       seahorse-daemon [ OPTION... ]
+
+DESCRIPTION
+       Seahorse is a GNOME application for managing encryption keys.
+
+       This is the daemon program which provides services to other parts of
+       Seahorse.
+
+OPTIONS
+   Help options
+       -?, --help
+	      Show summary of all options and exit.
+
+       --usage
+	      Display brief usage message and exit.
+
+   Application options
+       -d, --no-daemonize
+	      Do not daemonize seahorse-daemon.
+
+   Additional options
+       In addition, the usual GTK+ and GNOME command line options apply. See
+       the output of --help for details.
+
+VERSION
+       This man page describes seahorse-daemon version 0.9.x.
+
+BUGS
+       If you find a bug, please report it at
+	http://bugzilla.gnome.org/enter_bug.cgi?product=seahorse.
+
+AUTHORS
+       Jacob Perkins <jap1@users.sourceforge.net>
+
+       Jose Carlos Garcia Sogo <jsogo@users.sourceforge.net>
+
+       Jean Schurger <jk24@users.sourceforge.net>
+
+       Stef Walter <stef@memberwebs.com>
+
+       Adam Schreiber <sadam@clemson.edu>
+
+       This man page was originally written by Michael Mende
+       <debian@menole.net> for the Debian system.
+
+COPYRIGHT
+       Copyright (C) 2001, 2002 Jose Carlos Garcia Sogo
+       Copyright (C) 2002, 2003 Jacob Perkins
+       Copyright (C) 2004, 2006 Stef Walter, Adam Schreiber
+
+LICENSE
+       You are free to distribute this software under the terms of the GNU
+       General Public License.
+       Documentation and help files are covered by GFDL license.
+
+SEE ALSO
+       seahorse-tool(1), seahorse-agent(1),
+
+seahorse			 May 04, 2006		    seahorse-daemon(1)

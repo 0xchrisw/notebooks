@@ -1,0 +1,37 @@
+MATE-POWER-BACKLIGHT-HELPER(1)			MATE-POWER-BACKLIGHT-HELPER(1)
+
+NAME
+       mate-power-backlight-helper - helper application for MATE's power
+       management backlight control
+
+SYNOPSIS
+       mate-power-backlight-helper [ --help ] [ --set-brightness ] [ --get-
+       brightness ] [ --get-max-brightness ]
+
+DESCRIPTION
+       mate-power-backlight-helper is a helper utility for controlling the
+       backlight of TFT displays via the MATE power manager userspace daemon.
+
+       The mate-power-backlight-helper requires to be run with root
+       privileges.
+
+OPTIONS
+       --help Show summary of options.
+
+       --set-brightness BRIGHTNESS_LEVEL
+	      Set the given brightness.
+
+       --get-brightness
+	      Get the current brightness.
+
+       --get-max-brightness
+	      Get the number of brightness levels supported.
+
+SEE ALSO
+       mate-power-manager (1).
+
+AUTHOR
+       This manual page has been written by Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian system (but may be used by others).
+
+				21 April, 2014	MATE-POWER-BACKLIGHT-HELPER(1)

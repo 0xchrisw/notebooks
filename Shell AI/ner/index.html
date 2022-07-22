@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html id="app">
+  <head>
+    <meta charset="UTF-8">
+    <title>NER Tagger</title>
+    <meta http-equiv="Content-Security-Policy"
+          content="script-src 'self' 'unsafe-inline';" />
+    <style>
+      * {
+        margin:     0;
+        padding:    0;
+        box-sizing: border-box;
+      }
+
+      #container {
+        width:  100vw;
+        height: 85vh;
+      }
+
+      #text, #output {
+        display:     block;
+        float:       left;
+        height:      85vh;
+        white-space: pre-wrap;
+        overflow-y:  scroll;
+      }
+
+      #text {
+        width: 66vw;
+        background-color: #fff;
+      }
+
+      #output {
+        width: 33vw;
+        background-color: #f0f0f0;
+      }
+
+      #controlls {
+        height:      15vh;
+        background-color: #333;
+        padding-top: 6vh;
+      }
+
+    .btn {
+      text-decoration: none;
+      display: inline-block;
+      outline: 0;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      border-radius: 4px;
+      font-size: 3vh;
+      height: 6vh;
+      background-color: #9147ff;
+      color: white;
+      padding: 1.5vh 3vw;
+      }
+      .btn:hover {
+          background-color: #772ce8;
+      }
+
+    </style>
+    <script>
+      // window.nodeRequire = require;
+      // delete window.require;
+      // delete window.exports;
+      // delete window.module;
+    </script>
+  </head>
+
+  <body>
+    <div id="container">
+      <textarea id="text"></textarea>
+      <div id="output">
+        Label
+        <input type="text" id="label-text">
+      </div>
+    </div>
+
+    <div id="controlls">
+      <a href="#" id="label" class="btn">Label</a>
+      <a href="#" id="next" class="btn">Next</a>
+      <a href="#" id="submit" class="btn">Submit</a>
+      <a href="#" id="save" class="btn">Save</a>
+    </div>
+
+
+    <script src="./ner.js"></script>
+  </body>
+</html>

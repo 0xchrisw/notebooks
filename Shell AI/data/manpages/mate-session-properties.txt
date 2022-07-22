@@ -1,0 +1,47 @@
+MATE-SESSION-PROPERTIES(1)  General Commands Manual MATE-SESSION-PROPERTIES(1)
+
+NAME
+       mate-session-properties - Configure applications to start on login.
+
+SYNOPSIS
+       mate-session-properties
+
+DESCRIPTION
+       The mate-session-properties program enables the users to configure what
+       applications should be started on login, in addition to the default
+       startup applications configured on the system.
+
+       It also proposes an interface to save a snapshot of the currently
+       running applications so that they can automatically be restored to
+       their current state on your next MATE session.
+
+OPTIONS
+       --display=DISPLAY
+	      X display to use.
+
+       --version
+	      Output version information and exit.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-session-manager/issues
+
+AUTHORS
+   This Manual page was originally written for gnome-session by:
+       Vincent Untz <vuntz@gnome.org> (2009-2010)
+
+   It has been updated for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-session(1), mate-session-save(1), mate-wm(1)
+
+MATE Desktop Environment       11 February 2014     MATE-SESSION-PROPERTIES(1)

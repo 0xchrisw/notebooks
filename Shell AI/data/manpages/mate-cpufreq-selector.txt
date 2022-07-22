@@ -1,0 +1,55 @@
+MATE-CPUFREQ-SELECTOR(1)    General Commands Manual   MATE-CPUFREQ-SELECTOR(1)
+
+NAME
+       mate-cpufreq-selector - A generic command line tool to change the cpu
+       frequency.
+
+SYNOPSIS
+       mate-cpufreq-selector [OPTIONS]
+
+DESCRIPTION
+       This tool is a part of the CPU Frequency Scaling Monitor Applet for the
+       MATE Panel. It can be called from the command line when installed.
+       mate-cpufreq-selector is used to adjust the CPU Frequency settings if
+       the system supports scaling.
+
+       This manual page briefly documents the mate-cpufreq-selector command.
+
+OPTIONS
+       -c NUMBER, --cpu=NUMBER
+	      Specify the CPU Number to adjust settings for. If no CPU is
+	      specified, CPU0 is assumed.
+
+       -g GOVERNOR, --governor=GOVERNOR
+	      Specify a valid CPU Governor to use. (ie. conservative,
+	      ondemand, performance, powersave)
+
+       -f FREQ, --frequency=FREQ
+	      Specify a CPU Frequency to set in KHz.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+EXAMPLES
+       mate-cpufreq-selector --cpu=1 -g powersave
+	   Set scaling Governor "Powersave" on CPU1
+
+       mate-cpufreq-selector -f 1200
+	   Set max CPU Frequency to 1200KHz (1.2GHz) on CPU0
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-applets/issues
+
+AUTHORS
+   This Man Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   cpufreq-selector was originally written for gnome-applets by:
+       Carlos García Campos <carlosgc@gnome.org> (2004)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+MATE Desktop Environment	 18 April 2014	      MATE-CPUFREQ-SELECTOR(1)

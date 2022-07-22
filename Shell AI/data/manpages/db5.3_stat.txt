@@ -1,0 +1,131 @@
+DB5.3_STAT(1)		    General Commands Manual		 DB5.3_STAT(1)
+
+NAME
+       db5.3_stat - Display statistics for Berkeley DB environments
+
+SYNOPSIS
+       db5.3_stat -d file [-fN] [-h home] [-P password] [-s database]
+
+       db5.3_stat [-cEelmNrtVZ] [-C Aclop] [-h home] [-L A] [-M A] [-R A] [-P
+       password]
+
+DESCRIPTION
+       The db5.3_stat utility displays statistics for Berkeley DB
+       environments.
+
+OPTIONS
+       -C     Display internal information about the locking subsystem.  (The
+	      output from this option is often both voluminous and
+	      meaningless, and is intended only for debugging.)
+
+	      A      Display all information.
+
+	      c      Display lock conflict matrix.
+
+	      l      Display lockers within hash chains.
+
+	      o      Display lock objects within hash chains.
+
+	      p      Display locking subsystem parameters.
+
+       -c     Display locking subsystem statistics, as described in
+	      DB_ENV->lock_stat.
+
+       -d     Display database statistics for the specified file, as described
+	      in DB->stat.
+
+	      If the database contains multiple databases and the -s flag is
+	      not specified, the statistics are for the internal database that
+	      describes the other databases the file contains, and not for the
+	      file as a whole.
+
+       -E     Display internal information about the database environment,
+	      including all configured subsystems of the database environment.
+	      (The output from this option is often both voluminous and
+	      meaningless, and is intended only for debugging.)
+
+       -e     Display information about the database environment, including
+	      all configured subsystems of the database environment.
+
+       -f     Display only those database statistics that can be acquired
+	      without traversing the database.
+
+       -h     Specify a home directory for the database environment; by
+	      default, the current working directory is used.
+
+       -l     Display logging subsystem statistics, as described in
+	      DB_ENV->log_stat.
+
+       -M     Display internal information about the cache.  (The output from
+	      this option is often both voluminous and meaningless, and is
+	      intended only for debugging.)
+
+	      A      Display all information.
+
+	      h      Display buffers within hash chains.
+
+       -m     Display cache statistics, as described in DB_ENV->memp_stat.
+
+       -N     Do not acquire shared region mutexes while running.  Other
+	      problems, such as potentially fatal errors in Berkeley DB, will
+	      be ignored as well.  This option is intended only for debugging
+	      errors, and should not be used under any other circumstances.
+
+       -P     Specify an environment password.	Although Berkeley DB utilities
+	      overwrite password strings as soon as possible, be aware there
+	      may be a window of vulnerability on systems where unprivileged
+	      users can see command-line arguments or where utilities are not
+	      able to overwrite the memory containing the command-line
+	      arguments.
+
+       -R     Display internal information about the replication subsystem.
+	      (The output from this option is often both voluminous and
+	      meaningless, and is intended only for debugging.)
+
+	      A      Display all information.
+
+       -r     Display replication statistics, as described in
+	      DB_ENV->rep_stat.
+
+       -s     Display statistics for the specified database contained in the
+	      file specified with the -d flag.
+
+       -t     Display transaction subsystem statistics, as described in
+	      DB_ENV->txn_stat.
+
+       -V     Write the library version number to the standard output, and
+	      exit.
+
+       -Z     Reset the statistics after reporting them; valid only with the
+	      -C, -c, -E, -e, -L, -l, -M, -m, -R, -r, and -t options.
+
+       Values normally displayed in quantities of bytes are displayed as a
+       combination of gigabytes (GB), megabytes (MB), kilobytes (KB), and
+       bytes (B).  Otherwise, values smaller than 10 million are displayed
+       without any special notation, and values larger than 10 million are
+       displayed as a number followed by "M".
+
+       The db5.3_stat utility may be used with a Berkeley DB environment (as
+       described for the -h option, the environment variable DB_HOME, or
+       because the utility was run in a directory containing a Berkeley DB
+       environment).  In order to avoid environment corruption when using a
+       Berkeley DB environment, db5.3_stat should always be given the chance
+       to detach from the environment and exit gracefully.  To cause
+       db5.3_stat to release all environment resources and exit cleanly, send
+       it an interrupt signal (SIGINT).
+
+       The db5.3_stat utility exits 0 on success, and >0 if an error occurs.
+
+ENVIRONMENT
+       DB_HOME
+	      If the -h option is not specified and the environment variable
+	      DB_HOME is set, it is used as the path of the database home, as
+	      described in DB_ENV->open.
+
+AUTHORS
+       Sleepycat Software, Inc. This manual page was created based on the HTML
+       documentation for db_stat from Sleepycat, by Thijs Kinkhorst
+       <thijs@kinkhorst.com>, for the Debian system (but may be used by
+       others).
+
+				28 January 2005 		 DB5.3_STAT(1)

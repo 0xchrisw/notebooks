@@ -1,0 +1,274 @@
+OPENSC-EXPLORER(1)		 OpenSC Tools		    OPENSC-EXPLORER(1)
+
+NAME
+       opensc-explorer - generic interactive utility for accessing smart card
+       and similar security token functions
+
+SYNOPSIS
+       opensc-explorer [OPTIONS] [SCRIPT]
+
+DESCRIPTION
+       The opensc-explorer utility can be used to perform miscellaneous
+       operations such as exploring the contents of or sending arbitrary APDU
+       commands to a smart card or similar security token.
+
+       If a SCRIPT is given, opensc-explorer runs in non-interactive mode,
+       reading the commands from SCRIPT, one command per line. If no script is
+       given, opensc-explorer runs in interactive mode, reading commands from
+       standard input.
+
+OPTIONS
+       The following are the command-line options for opensc-explorer. There
+       are additional interactive commands available once it is running.
+
+       --card-driver driver, -c driver
+	   Use the given card driver. The default is auto-detected.
+
+       --mf path, -m path
+	   Select the file referenced by the given path on startup. The
+	   default is the path to the standard master file, 3F00. If path is
+	   empty (e.g.	opensc-explorer --mf ""), then no file is explicitly
+	   selected.
+
+       --reader arg, -r arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --verbose, -v
+	   Cause opensc-explorer to be more verbose. Specify this flag several
+	   times to enable debug output in the opensc library.
+
+       --wait, -w
+	   Wait for a card to be inserted.
+
+COMMANDS
+       opensc-explorer supports commands with arguments at its interactive
+       prompt or in script files passed via the command line parameter SCRIPT.
+
+       Similar to a command shell like e.g.  bash, each input line is split
+       into white-space separated words. Of these words, the first one is used
+       as the command, while the remaining ones are treated as arguments to
+       that command.
+
+       The following commands are supported:
+
+       # ...
+	   Treat line as a comment. Ignore anything until the end of the line
+	   introduced by #.
+
+       apdu data...
+	   Send a custom APDU command to the card.  data is a series of
+	   sequences of hexadecimal values and strings enclosed in double
+	   quotes ("...").
+
+       asn1 file-id
+	   Parse and print the ASN.1 encoded content of the working EF
+	   specified by file-id.
+
+       cat [file-id | sfi:short-id]
+	   Print the contents of the working EF specified by file-id or the
+	   short file id short-id. If no argument is given, print the the
+	   contents of the currently selected EF.
+
+       cd {.. | file-id | aid:DF-name}
+	   Change to another DF specified by the argument passed. If the
+	   argument given is .., then move up one level in the file system
+	   hierarchy. If it is a file-id, which must be a DF directly beneath
+	   the current DF, then change to that DF. If it is an application
+	   identifier given as aid:DF-name, then jump to the MF of the
+	   application denoted by DF-name.
+
+       change CHVpin-ref [[old-pin] new-pin]
+	   Change the PIN specified by pin-ref from the value given by old-pin
+	   and change its value to new-pin.
+
+	   old-pin and new-pin can be sequences of hexadecimal values, strings
+	   enclosed in double quotes ("..."), empty (""), or absent. If
+	   absent, the values are read from the card reader's pin pad.
+
+	   Examples:
+
+	   change CHV2 00:00:00:00:00:00 "foobar"
+	       Change PIN CHV2 to the new value foobar, giving the old value
+	       00:00:00:00:00:00.
+
+	   change CHV2 "foobar"
+	       Set PIN CHV2 to the new value foobar.
+
+	   change CHV2
+	       Change PIN CHV2 using the card reader's pinpad.
+
+       create file-id size
+	   Create a new EF.  file-id specifies the numeric id, and size the
+	   size of the EF to create.
+
+       debug [level]
+	   Set OpenSC debug level to level.
+
+	   If level is omitted, show the current debug level.
+
+       delete file-id
+	   Remove the EF or DF specified by file-id.
+
+       do_get hex-tag [output]
+	   Copy the contents of the card's data object (DO) specified by
+	   hex-tag to the local host computer's file named output.
+
+	   If output is not given, the contents of hex-tag will be displayed
+	   as hex-dump.
+
+       do_put hex-tag data
+	   Change the contents of the card's data object (DO) specified by
+	   hex-tag to data.
+
+	   data is either a sequence of hexadecimal values or a string
+	   enclosed in double quotes ("...").
+
+       echo string...
+	   Print the strings given.
+
+       erase
+	   Erase the card, if the card supports it.
+
+       get file-id [output]
+	   Copy an EF to a local file. The local file is specified by output
+	   while the card file is specified by file-id.
+
+	   If output is omitted, the name of the output file will be derived
+	   from the full card path to file-id.
+
+       help [pattern]
+	   Display the list of available commands, their options and
+	   parameters together with a short help text. If pattern is given,
+	   the commands shown are limited to those matching pattern.
+
+       info [file-id]
+	   Display attributes of a file specified by file-id. If file-id is
+	   not supplied, the attributes of the current file are displayed.
+
+       ls [pattern...]
+	   List files in the current DF. If no pattern is given, then all
+	   files are listed. If one ore more patterns are given, only files
+	   matching at least one pattern are listed.
+
+       find [start-id [end-id]]
+	   Find all files in the current DF. Files are found by selecting all
+	   file identifiers in the range from start-fid to end-fid.
+
+	   If not given, the default value for start-fid is 0000, while the
+	   default for end-fid is FFFF.
+
+       find_tags [start-tag [end-tag]]
+	   Find all tags of data objects in the current context. Tags are
+	   found by using GET DATA in the range from from start-tag to
+	   end-tag.
+
+	   If not given, the default value for start-tag is 0000, while the
+	   default for end-tag is FFFF.
+
+       mkdir file-id size
+	   Create a DF.  file-id specifies the numeric id, and size the size
+	   of the DF to create.
+
+       pin_info key-typekey-id
+	   Get information on a PIN or key from the card, where key-type can
+	   be one of CHV, KEY, AUT or PRO.  key-id is a number representing
+	   the key or PIN reference.
+
+       put file-id input
+	   Copy a local file to the card. The local file is specified by input
+	   while the card file is specified by file-id.
+
+       quit
+	   Exit the program.
+
+       random count [output-file]
+	   Generate count bytes of random data. If output-file is given, write
+	   the data to the host computer's file denoted by it, otherwise show
+	   the data as hex dump.
+
+       rm file-id
+	   Remove the EF or DF specified by file-id.
+
+       unblock CHVpin-ref [puk [new-pin]]
+	   Unblock the PIN denoted by pin-ref using the PUK puk, and
+	   potentially change its value to new-pin.
+
+	   puk and new-pin can be sequences of hexadecimal values, strings
+	   enclosed in double quotes ("..."), empty (""), or absent. If
+	   absent, the values are read from the card reader's pin pad.
+
+	   Examples:
+
+	   unblock CHV2 00:00:00:00:00:00 "foobar"
+	       Unblock PIN CHV2 using PUK 00:00:00:00:00:00 and set it to the
+	       new value foobar.
+
+	   unblock CHV2 00:00:00:00:00:00 ""
+	       Unblock PIN CHV2 using PUK 00:00:00:00:00:00 keeping the old
+	       value.
+
+	   unblock CHV2 "" "foobar"
+	       Set new value of PIN CHV2 to foobar.
+
+	   unblock CHV2 00:00:00:00:00:00
+	       Unblock PIN CHV2 using PUK 00:00:00:00:00:00. The new PIN value
+	       is prompted by pinpad.
+
+	   unblock CHV2 ""
+	       Set PIN CHV2. The new PIN value is prompted by pinpad.
+
+	   unblock CHV2
+	       Unblock PIN CHV2. The unblock code and new PIN value are
+	       prompted by pinpad.
+
+       update_binary file-id offs data
+	   Binary update of the file specified by file-id with the literal
+	   data data starting from offset specified by offs.
+
+	   data can be supplied as a sequence of hexadecimal values or as a
+	   string enclosed in double quotes ("...").
+
+       update_record file-id rec-nr rec-offs data
+	   Update record specified by rec-nr of the file specified by file-id
+	   with the literal data data starting from offset specified by
+	   rec-offs.
+
+	   data can be supplied as a sequence of hexadecimal values or as a
+	   string enclosed in double quotes ("...").
+
+       verify key-typekey-id [key]
+	   Present a PIN or key to the card, where key-type can be one of CHV,
+	   KEY, AUT or PRO.  key-id is a number representing the key or PIN
+	   reference.  key is the key or PIN to be verified, formatted as a
+	   colon-separated sequence of hexadecimal values or a string enclosed
+	   in double quotes ("...").
+
+	   If key is omitted, the exact action depends on the card reader's
+	   features: if the card readers supports PIN input via a pin pad,
+	   then the PIN will be verified using the card reader's pin pad. If
+	   the card reader does not support PIN input, then the PIN will be
+	   asked interactively.
+
+	   Examples:
+
+	   verify CHV2 31:32:33:34:00:00:00:00
+	       Verify CHV2 using the hex value 31:32:33:34:00:00:00:00
+
+	   verify CHV1 "secret"
+	       Verify CHV1 using the string value secret.
+
+	   verify KEY2
+	       Verify KEY2, get the value from the card reader's pin pad.
+
+       sm {open | close}
+	   Call the card's open or close Secure Messaging handler.
+
+SEE ALSO
+       opensc-tool(1)
+
+AUTHORS
+       opensc-explorer was written by Juha Yrjölä <juha.yrjola@iki.fi>.
+
+opensc				  01/28/2020		    OPENSC-EXPLORER(1)

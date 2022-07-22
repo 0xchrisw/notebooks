@@ -1,0 +1,33 @@
+AIDL(1) 							       AIDL(1)
+
+NAME
+       aidl-cpp - C++ bindings generator of AIDL interfaces
+
+SYNOPSIS
+       aidl-cpp INPUT_FILE HEADER_DIR OUTPUT_FILE
+
+OPTIONS
+       -I<DIR>
+	      Search path for import statements.
+
+       -d<FILE>
+	      Generate dependency file.
+
+       -ninja Generate dependency file in a format ninja understands.
+
+       INPUT_FILE
+	      An aidl interface file.
+
+       HEADER_DIR
+	      An empty directory to put generated headers.
+
+       OUTPUT_FILE
+	      Path to write generated .cpp code
+
+SEE ALSO
+       https://developer.android.com/guide/components/aidl.html
+
+AUTHORS
+       The Android Open Source Project.
+
+								       AIDL(1)

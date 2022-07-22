@@ -1,0 +1,21 @@
+mate-menu(1)		    General Commands Manual		  mate-menu(1)
+
+NAME
+       mate-menu - Advanced menu for the MATE desktop environment's panel
+
+SYNOPSIS
+       mate-menu [option]
+
+DESCRIPTION
+       An advanced menu for MATE. Supports filtering, favorites, autosession,
+       and many other features.
+
+OPTIONS
+       [--]help, [-]h, [-]?
+	      Display command line options.
+
+       [--]clean, [--]clear, [--]reset
+	      Restore the MATE Menu settings to default by deleting the
+	      settings file (~/.config/mate-menu/).
+
+								  mate-menu(1)

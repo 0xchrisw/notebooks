@@ -1,0 +1,25 @@
+CAJA-AUTORUN-SOFTWARE(1)	General Manual	      CAJA-AUTORUN-SOFTWARE(1)
+
+NAME
+       caja-autorun-software - Autorun Software in Caja
+
+DESCRIPTION
+       This executable is provided as a part of the Caja package for the MATE
+       Desktop Environment.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       https://github.com/mate-desktop/caja/issues
+
+LICENSE
+       GPL v2 or later
+
+SEE ALSO
+   Caja documentation can be found from the "Help" menu, or by pressing the F1
+       key.
+       Further information may also be available at: https://wiki.mate-
+       desktop.org/docs
+
+       caja(1), caja-connect-server(1), caja-file-management-properties(1)
+
+MATE Desktop Environment	29 January 2014       CAJA-AUTORUN-SOFTWARE(1)

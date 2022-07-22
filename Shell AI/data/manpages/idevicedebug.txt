@@ -1,0 +1,37 @@
+idevicedebug(1) 	    General Commands Manual	       idevicedebug(1)
+
+NAME
+       idevicedebug - Interact with the debugserver service of a device.
+
+SYNOPSIS
+       idevicedebug [OPTIONS] COMMAND
+
+DESCRIPTION
+       Interact with the debug service of a device. Currently the only
+       implemented command is "run" and allows execution of developer apps and
+       watch the stdout/stderr of the process.
+
+OPTIONS
+       -e, --env NAME=VALUE
+	      set environment variable NAME to VALUE.
+
+       -u, --udid UDID
+	      target specific device by UDID.
+
+       -d, --debug
+	      enable communication debugging.
+
+       -h, --help
+	      prints usage information.
+
+COMMANDS
+       run BUNDLEID [ARGS...]
+	      run app with BUNDLEID and optional ARGS on device.
+
+AUTHORS
+       Martin Szulecki
+
+ON THE WEB
+       http://libimobiledevice.org
+
+							       idevicedebug(1)

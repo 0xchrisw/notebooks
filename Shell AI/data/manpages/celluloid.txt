@@ -1,0 +1,36 @@
+celluloid(1)		    General Commands Manual		  celluloid(1)
+
+NAME
+       celluloid - A simple GTK+ frontend for mpv
+
+SYNOPSIS
+       celluloid [options...]  [filenames|URIs]
+
+DESCRIPTION
+       Celluloid is a simple GTK+ frontend for mpv.  Celluloid interacts with
+       mpv via the client API exported by libmpv, allowing access to mpv's
+       powerful playback capabilities.
+
+OPTIONS
+       -?, -h, --help
+	      Show help options.
+
+       --new-window
+	      Create a new window if there is already a running instance. The
+	      option has no effect otherwise.
+
+       --enqueue
+	      Append the given files or URIs to the playlist if there is a
+	      running instance.  The option has no effect otherwise.
+
+       --mpv-options=OPTIONS
+	      Pass arbitrary options to mpv.
+
+       --version
+	      Print the release version and exit.
+
+BUGS
+       Please report bugs at https://github.com/celluloid-
+       player/celluloid/issues.
+
+				 19 July 2017			  celluloid(1)

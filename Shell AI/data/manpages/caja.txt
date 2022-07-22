@@ -1,0 +1,98 @@
+CAJA(1) 		    General Commands Manual		       CAJA(1)
+
+NAME
+       Caja - The MATE File Manager
+
+SYNOPSIS
+       caja [OPTIONS...] [URI...]
+
+DESCRIPTION
+       Caja is the default file manager for the MATE Desktop Environment. It
+       makes it easy to manage, manipulate, and customize files and
+       directories. Caja can access local and remote filesystems such as SSH,
+       FTP, and WebDav (HTTP/HTTPS).
+
+       Caja also provides the desktop background and the icons it uses for
+       launching links and applications, as well as accessing files,
+       directories, the trash, and removable media like CD/DVD/BD and USB
+       drives.
+
+       This manual page briefly documents the caja command.
+
+OPTIONS
+       --browser
+	      Open a browser window.
+
+       -c, --check
+	      Perform a quick set of self-check tests.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -g, --geometry=GEOMETRY
+	      Create the initial window with the given geometry.
+
+       -t, --tabs
+	      Open URIs in tabs.
+
+       -n, --no-default-window
+	      Only create windows for explicitly specified URIs.
+
+       --no-desktop
+	      Do not manage the desktop (ignore the preference set in the
+	      preferences dialog).
+
+       --force-desktop
+	      Manage the desktop regardless of set preferences or environment
+	      (on new startup only)
+
+       -q, --quit
+	      Quit Caja.
+
+       --version
+	      Print current version information and exit.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       caja ftp://ftp.kernel.org/
+	   Open a new Caja window on the Linux Kernel ftp server.
+
+       caja --no-desktop /home/user/
+	   Open a Caja window in "user's" home directory without managing the
+	   desktop.
+
+       caja -g 600x400
+	   Open a Caja window that is 600 pixels wide by 400 pixels high.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       https://github.com/mate-desktop/caja/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+       This manual page was originally written by Takuo KITAME
+       <kitame@debian.org> and Dafydd Harries <daf@muse.19inch.net> to
+       accompany the Nautilus file manager for the GNOME Desktop Environment
+       on Debian GNU/Linux. (2004)
+
+SEE ALSO
+   Caja documentation can be found from the "Help" menu, or by pressing the F1
+       key.
+       Further information may also be available at: https://wiki.mate-
+       desktop.org/docs
+
+       caja-file-management-properties(1), caja-autorun-software(1), caja-
+       connect-server(1)
+
+MATE Desktop Environment	29 January 2014 		       CAJA(1)

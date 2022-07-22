@@ -1,0 +1,15 @@
+BLUEMAN-MANAGER(1)	    General Commands Manual	    BLUEMAN-MANAGER(1)
+
+NAME
+       blueman-manager - bluetooth device manager
+
+SYNOPSIS
+       blueman-manager
+
+OPTIONS
+       There are no options.
+
+AUTHOR
+       Valmantas Paliksa
+
+				     LOCAL		    BLUEMAN-MANAGER(1)

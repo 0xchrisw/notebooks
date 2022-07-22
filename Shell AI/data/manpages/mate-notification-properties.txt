@@ -1,0 +1,26 @@
+mate-notification-propertiesGeneral Commands Mamate-notification-properties(1)
+
+NAME
+       mate-notification-properties - Set up the options for desktop
+       notifications
+
+SYNOPSIS
+       mate-notification-properties
+
+DESCRIPTION
+       This manual page documents briefly the mate-notification-properties
+       command.
+
+       mate-notification-properties is a utility to set up various options
+       related to desktop notifications.
+
+AUTHOR
+       mate-notification-properties was written by Jonh Wendell
+       <wendell@bani.com.br> and Perberos <perberos@gmail.com>.
+
+       This manual page was written by Francois Wendling <frwendling@free.fr>
+       for the notification-properties in Debian project (but may be used by
+       others) and adapted for MATE by Stefano Karapetsas
+       <stefano@karapetsas.com>.
+
+				  2009-08-03   mate-notification-properties(1)

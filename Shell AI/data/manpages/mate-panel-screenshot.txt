@@ -1,0 +1,61 @@
+MATE-SCREENSHOT(1)					    MATE-SCREENSHOT(1)
+
+NAME
+       mate-screenshot - capture the screen, a window, or an user-defined area
+       and save the snapshot image to a file.
+
+SYNOPSIS
+       mate-screenshot [ -w ]  [ -a ]  [ -b ]  [ -B ]  [ -d SECONDS  ]	[ -e
+       EFFECT  ]  [ -i ]  [ --display DISPLAY  ]
+
+DESCRIPTION
+       mate-screenshot is a MATE utility for taking screenshots of the entire
+       screen, a window or an user-defined area of the screen, with optional
+       beutifying border effects.
+
+OPTIONS
+       -w, --window
+	      Grab the current active window instead of the entire screen.
+
+       -a, --area
+	      Grab an area of the screen instead of the entire screen.
+
+       -b, --include-border
+	      Include the window border within the screenshot.
+
+       -B, --remove-border
+	      Remove the window border from the screenshot.
+
+       -d, --delay=SECONDS,
+	      Take the screenshot after the specified delay [in seconds].
+
+       -e, --effect=EFFECT,
+	      Add an effect to the outside of the screenshot border.  EFFECT
+	      can be ``shadow'' (adding drop shadow), ``border'' (adding
+	      rectangular space around the screenshot) or ``none'' (no
+	      effect).	Default is ``none''.
+
+       -i, --interactive
+	      Interactively set options in a dialog.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, -h, --help
+	      Show a summary of the available options.
+
+       In addition, the usual GTK+ and MATE command line options apply.  See
+       the output of --help for details.
+
+SEE ALSO
+       mate-options(7), gtk-options(7)
+
+AUTHOR
+       This manual page was written by Christian Marillat
+       <marillat@debian.org> for the Debian GNU/Linux system (but may be used
+       by others).
+
+       Updated by Theppitak Karoonboonyanan <thep@linux.thai.net>, Tom Feiner
+       <feiner.tom@gmail.com> and Cosimo Cecchi <cosimoc@gnome.org>
+
+				 June 28, 2009		    MATE-SCREENSHOT(1)

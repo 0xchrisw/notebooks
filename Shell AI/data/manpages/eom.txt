@@ -1,0 +1,78 @@
+EOM(1)			    General Commands Manual			EOM(1)
+
+NAME
+       eom - The Eye of MATE Image Viewer
+
+SYNOPSIS
+       eom [--fullscreen] [--disable-image-collection] [--slide-show] [--new
+       instance] [FILES...]
+
+DESCRIPTION
+       eom or the Eye of MATE is the official image viewer for the MATE
+       Desktop Environment. It aims to be simplistic, lightweight, and easy to
+       use. The Eye of MATE may also be used to perform basic tasks like image
+       flipping and rotation.
+
+       Eye of MATE features a flexible plugin system which can be used to
+       dynamically add new advanced features to eom itself. eom uses the gdk-
+       pixbuf library, it can handle large images, zoom, and scroll with low
+       memory usage.
+
+       This manual page briefly documents the eom command.
+
+OPTIONS
+       filename(s)...
+	      Specifies the image to open when eom starts. If this is not
+	      specified, eom will start with a blank window and you may open a
+	      file from the menu or by using the shortcut CTRL+O. eom also
+	      supports handling of remote files.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -f, --fullscreen
+	      Start eom in fullscreen mode.
+
+       -c, --disable-image-collection
+	      Disable image collection viewer.
+
+       -s, --slide-show
+	      Open in slideshow mode.
+
+       -n, --new-instance
+	      Start a new instance instead of reusing an existing window.
+
+       --version
+	      Output version information and exit.
+
+       -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       eom -f http://mate-desktop.org/assets/img/icons/mate.png
+	   Open the referenced file in fullscreen mode.
+
+       eom -s /usr/share/eom/icons/hicolor/scalable/actions
+	   Open the images in the referenced directory in slideshow mode.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/eom/issues
+
+AUTHORS
+   This Manual Page has been written for the MATE Desktop Environment by:
+       Scott Balneaves <sbalneav@mate-desktop.org> (2013) Adam Erdman
+       <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Eye of MATE documentation can be found from the "Help" menu, or by pressing
+       the F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+MATE Desktop Environment	31 January 2014 			EOM(1)

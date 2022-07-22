@@ -1,0 +1,28 @@
+mate-time-admin(1)	    General Commands Manual	    mate-time-admin(1)
+
+NAME
+       mate-time-admin - set date and time
+
+SYNOPSIS
+       mate-time-admin [OPTIONS...]
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       Use mate-time-admin , the MATE Time Admin Tool, to set date and time of
+       the local system.
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+OPTIONS
+       This program accepts the standard MATE and GTK options.
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), caja(1), gtk-options(7)
+
+MATE				  2020-02-14		    mate-time-admin(1)

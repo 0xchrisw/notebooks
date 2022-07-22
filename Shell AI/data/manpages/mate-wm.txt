@@ -1,0 +1,66 @@
+MATE-WM(1)		    General Commands Manual		    MATE-WM(1)
+
+NAME
+       mate-wm - Start the window manager configured by the user
+
+SYNOPSIS
+       mate-wm [--default-wm=WINDOWMANAGER] [--sm-client-id=ID]
+
+DESCRIPTION
+       The mate-wm program starts the window manager configured by the user.
+       If the user has not chosen a window manager it will launch a MATE
+       compliant window manager.
+
+USAGE
+       The user can define his preferred window manager with the
+       /org/mate/desktop/session/required-components/windowmanager dconf key.
+       The value of this key should be the name of the desktop file of the
+       desired window manager, without its .desktop extension. If this key is
+       set to mate-wm, then mate-wm will simply look for an appropriate window
+       manager. The user can also override the selection of a window manager
+       by setting the WINDOW_MANAGER environment variable.
+
+       If the --default-wm option is used, mate-wm will use WINDOWMANAGER as
+       window manager if the WINDOW_MANAGER environment variable is not set
+       and if the /org/mate/desktop/session/required-components/windowmanager
+       dconf key does not define a specific window manager, or if the
+       configured window manager cannot be found.
+
+       The --sm-client-id option is translated to an appropriate option
+       depending on which window manager will be started.
+
+OPTIONS
+       The following options are supported:
+
+       --default-wm=WINDOWMANAGER
+	      Define the default window manager to start if no window manager
+	      is configured, or if the configured window manager cannot be
+	      found.
+
+       --sm-client-id=ID
+	      Specify the session management ID when connecting to the session
+	      manager.
+
+ENVIRONMENT
+       mate-wm uses the value of the WINDOW_MANAGER environment variable to
+       let the user override the configured window manager.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-session-manager/issues
+
+AUTHORS
+   This Man Page has been updated for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   This Manual was originally written for gnome-session by:
+       Miguel de Icaza <miguel@helixcode.com> (2000)
+       Vincent Untz <vuntz@gnome.org> (2009-2010)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-session-properties(1), mate-session-save(1), mate-session(1)
+
+MATE Desktop Environment       11 February 2014 		    MATE-WM(1)

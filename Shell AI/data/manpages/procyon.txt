@@ -1,0 +1,191 @@
+PROCYON(1)			 User Commands			    PROCYON(1)
+
+NAME
+       procyon - manual page for the Procyon Java decompiler
+
+SYNOPSIS
+       procyon [options] <type names or class/jar files>
+
+DESCRIPTION
+       Procyon is a Java decompiler handling language enhancements from Java 5
+       and beyond that most other decompilers don't. It also excels in areas
+       where others fall short. Procyon in particular does well with:
+	* Enum declarations
+	* Enum and String switch statements
+	* Local classes (both anonymous and named)
+	* Annotations
+	* Java 8 Lambdas and method references
+
+       Procyon offers three output modes:
+	* Java (default)
+	* Raw Bytecode (similar to javap, but prettier; run with -r)
+	* Bytecode AST (an intermediate representation; run with -b, add -u
+       for unoptimized)
+
+       One or more types can be passed as an argument to be processed. The
+       input types can be fully-qualified names in dotted or binary form
+       (e.g., java.lang.String or java/lang/String) or relative/absolute file
+       paths (path/to/MyClass.class) or even whole jar files.  If a type name
+       is passed, Procyon will attempt to load it out of the user or bootstrap
+       classpath.
+
+OPTIONS
+       -b, --bytecode-ast
+
+	      Output Bytecode AST instead of Java.  Default: false
+
+       -ci, --collapse-imports
+
+	      Collapse multiple imports from the same package into a single
+	      wildcard import.	Default: false
+
+       -cp, --constant-pool
+
+	      Includes the constant pool when displaying raw bytecode
+	      (unnecessary with -v).  Default: false
+
+       -dl, --debug-line-numbers
+
+	      For debugging, show Java line numbers as inline comments
+	      (implies -ln; requires -o).  Default: false
+
+       --disable-foreach
+
+	      Disable 'for each' loop transforms.  Default: false
+
+       -eml, --eager-method-loading
+
+	      Enable eager loading of method bodies (may speed up
+	      decompilation of larger archives).  Default: false
+
+       -ent, --exclude-nested
+
+	      Exclude nested types when decompiling their enclosing types.
+	      Default: false
+
+       -ei, --explicit-imports
+
+	      [DEPRECATED] Explicit imports are now enabled by default.  This
+	      option will be removed in a future release.  Default: false
+
+       -eta, --explicit-type-arguments
+
+	      Always print type arguments to generic methods.  Default: false
+
+       -fsb, --flatten-switch-blocks
+
+	      Drop the braces statements around switch sections when possible.
+	      Default: false
+
+       -?, --help
+
+	      Display this usage information and exit.	Default: false
+
+       -jar, --jar-file
+
+	      [DEPRECATED] Decompile all classes in the specified jar file
+	      (disables -ent and -s).
+
+       -lc, --light
+
+	      Use a color scheme designed for consoles with light background
+	      colors.  Default: false
+
+       -lv, --local-variables
+
+	      Includes the local variable tables when displaying raw bytecode
+	      (unnecessary with -v).  Default: false
+
+       -ll, --log-level
+
+	      Set the level of log verbosity (0-3).  Level 0 disables logging.
+	      Default: 0
+
+       -mv, --merge-variables
+
+	      Attempt to merge as many variables as possible.  This may lead
+	      to fewer declarations, but at the expense of inlining and useful
+	      naming.  This feature is experimental and may be removed or
+	      become the standard behavior in future releases.	Default: false
+
+       -o, --output-directory
+
+	      Write decompiled results to specified directory instead of the
+	      console.
+
+       -r, --raw-bytecode
+
+	      Output Raw Bytecode instead of Java (to control the level of
+	      detail, see: -cp, -lv, -ta, -v).	Default: false
+
+       -ec, --retain-explicit-casts
+
+	      Do not remove redundant explicit casts.  Default: false
+
+       -ps, --retain-pointless-switches
+
+	      Do not lift the contents of switches having only a default
+	      label.  Default: false
+
+       -ss, --show-synthetic
+
+	      Show synthetic (compiler-generated) members.  Default: false
+
+       -sm, --simplify-member-references
+
+	      Simplify type-qualified member references in Java output
+	      [EXPERIMENTAL].  Default: false
+
+       -sl, --stretch-lines
+
+	      Stretch Java lines to match original line numbers (only in
+	      combination with -o) [EXPERIMENTAL].  Default: false
+
+       -ta, --type-attributes
+
+	      Includes type attributes when displaying raw bytecode
+	      (unnecessary with -v).  Default: false
+
+       --unicode
+
+	      Enable Unicode output (printable non-ASCII characters will not
+	      be escaped).  Default: false
+
+       -u, --unoptimized
+
+	      Show unoptimized code (only in combination with -b).  Default:
+	      false
+
+       -v, --verbose
+
+	      Includes more detailed output depending on the output language
+	      (currently only supported for raw bytecode).  Default: false
+
+       --version
+
+	      Display the decompiler version and exit.	Default: false
+
+       -ln, --with-line-numbers
+
+	      Include line numbers in raw bytecode mode; supports Java mode
+	      with -o only.  Default: false
+
+EXAMPLES
+       Decompile a single class to the console:
+
+	      $ procyon java.lang.String
+
+	      $ procyon java.util.Collections
+
+       Decompile a whole jar to a directory:
+
+	      $ procyon myJar.jar -o out
+
+       Decompile a single class from a jar:
+
+	      $ CLASSPATH=myJar.jar procyon com.example.Foo
+
+SEE ALSO
+       https://bitbucket.org/mstrobel/procyon/wiki/Java%20Decompiler
+
+procyon 0.5.32			 October 2016			    PROCYON(1)

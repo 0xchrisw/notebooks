@@ -1,0 +1,33 @@
+idevicename(1)		    General Commands Manual		idevicename(1)
+
+NAME
+       idevicename - Display the device name or set it to NAME if specified.
+
+SYNOPSIS
+       idevicename [OPTIONS] [NAME]
+
+DESCRIPTION
+       Simple utility to manage the device name.
+
+       If called without any extra argument this tool will print the current
+       device name.
+
+       If NAME is given the device name will be set to the name specified.
+
+OPTIONS
+       -d, --debug
+	      enable communication debugging.
+
+       -u, --udid UDID
+	      target specific device by UDID.
+
+       -h, --help
+	      prints usage information
+
+AUTHOR
+       Nikias Bassen
+
+ON THE WEB
+       http://libimobiledevice.org
+
+								idevicename(1)

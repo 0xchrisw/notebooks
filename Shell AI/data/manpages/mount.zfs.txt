@@ -1,0 +1,94 @@
+mount.zfs(8)		System Administration Commands		  mount.zfs(8)
+
+NAME
+       mount.zfs - mount a ZFS filesystem
+
+SYNOPSIS
+       mount.zfs [-sfnvh] [-o options] dataset mountpoint
+
+DESCRIPTION
+       mount.zfs is part of the zfsutils package for Linux. It is a helper
+       program that is usually invoked by the mount(8) or zfs(8) commands to
+       mount a ZFS dataset.
+
+       All options are handled according to the FILESYSTEM INDEPENDENT MOUNT
+       OPTIONS section in the mount(8) manual, except for those described
+       below.
+
+       The dataset parameter is a ZFS filesystem name, as output by the zfs
+       list -H -o name command. This parameter never has a leading slash
+       character and is not a device name.
+
+       The mountpoint parameter is the path name of a directory.
+
+OPTIONS
+       -s     Ignore bad or sloppy mount options.
+
+       -f     Do a fake mount; do not perform the mount operation.
+
+       -n     Do not update the /etc/mtab file.
+
+       -v     Increase verbosity.
+
+       -h     Print the usage message.
+
+       -o context
+	      This flag sets the SELinux context for all files in the
+	      filesystem under that mountpoint.
+
+       -o fscontext
+	      This flag sets the SELinux context for the filesystem being
+	      mounted.
+
+       -o defcontext
+	      This flag sets the SELinux context for unlabeled files.
+
+       -o rootcontext
+	      This flag sets the SELinux context for the root inode of the
+	      filesystem.
+
+       -o legacy
+	      This private flag indicates that the dataset has an entry in the
+	      /etc/fstab file.
+
+       -o noxattr
+	      This private flag disables extended attributes.
+
+       -o xattr
+	      This private flag enables directory-based extended attributes
+	      and, if appropriate, adds a ZFS context to the selinux system
+	      policy.
+
+       -o saxattr
+	      This private flag enables system attributed-based extended
+	      attributes and, if appropriate, adds a ZFS context to the
+	      selinux system policy.
+
+       -o dirxattr
+	      Equivalent to xattr.
+
+       -o zfsutil
+	      This private flag indicates that mount(8) is being called by the
+	      zfs(8) command.
+
+NOTES
+       ZFS conventionally requires that the mountpoint be an empty directory,
+       but the Linux implementation inconsistently enforces the requirement.
+
+       The mount.zfs helper does not mount the contents of zvols.
+
+FILES
+       /etc/fstab	 The static filesystem table.
+
+       /etc/mtab	 The mounted filesystem table.
+
+AUTHORS
+       The primary author of mount.zfs is Brian Behlendorf
+       <behlendorf1@llnl.gov>.
+
+       This man page was written by Darik Horn <dajhorn@vanadac.com>.
+
+SEE ALSO
+       fstab(5), mount(8), zfs(8)
+
+ZFS on Linux			  2013 FEB 28			  mount.zfs(8)

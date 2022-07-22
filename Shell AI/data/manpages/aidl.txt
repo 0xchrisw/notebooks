@@ -1,0 +1,47 @@
+AIDL(1) 							       AIDL(1)
+
+NAME
+       aidl - Java bindings generator of AIDL interfaces
+
+SYNOPSIS
+       aidl OPTIONS INPUT [OUTPUT]
+
+       aidl –preprocess OUTPUT INPUT...
+
+OPTIONS
+       -I<DIR>
+	      Search path for import statements.
+
+       -d<FILE>
+	      Generate dependency file.
+
+       -a     Generate dependency file next to the output file with the name
+	      based on the input file.
+
+       -ninja Generate dependency file in a format ninja understands.
+
+       -p<FILE>
+	      File created by –preprocess to import.
+
+       -o<FOLDER>
+	      Base output folder for generated files.
+
+       -b     Fail when trying to compile a parcelable.
+
+       INPUT  An aidl interface file.
+
+       OUTPUT The generated interface files.
+
+       If OUTPUT is omitted and the -o option is not used, the input filename
+       is used, with the .aidl extension changed to a .java extension.
+
+       If the -o option is used, the generated files will be placed in the
+       base output folder under their package folder.
+
+SEE ALSO
+       https://developer.android.com/guide/components/aidl.html
+
+AUTHORS
+       The Android Open Source Project.
+
+								       AIDL(1)

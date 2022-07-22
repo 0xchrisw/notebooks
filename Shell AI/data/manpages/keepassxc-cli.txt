@@ -1,0 +1,197 @@
+KEEPASSXC-CLI(1)	    General Commands Manual	      KEEPASSXC-CLI(1)
+
+NAME
+       keepassxc-cli - command line interface for the KeePassXC password
+       manager.
+
+SYNOPSIS
+       keepassxc-cli command [options]
+
+DESCRIPTION
+       keepassxc-cli is the command line interface for the KeePassXC password
+       manager. It provides the ability to query and modify the entries of a
+       KeePass database, directly from the command line.
+
+COMMANDS
+       add [options] <database> <entry>
+	      Adds a new entry to a database. A password can be generated (-g
+	      option), or a prompt can be displayed to input the password (-p
+	      option).
+
+       clip [options] <database> <entry> [timeout]
+	      Copies the password or the current TOTP (-t option) of a
+	      database entry to the clipboard. If multiple entries with the
+	      same name exist in different groups, only the password for the
+	      first one is going to be copied. For copying the password of an
+	      entry in a specific group, the group path to the entry should be
+	      specified as well, instead of just the name. Optionally, a
+	      timeout in seconds can be specified to automatically clear the
+	      clipboard.
+
+       create [options] <database>
+	      Creates a new database with a key file and/or password. The key
+	      file will be created if the file that is referred to does not
+	      exist. If both the key file and password are empty, no database
+	      will be created.
+
+       diceware [options]
+	      Generate a random diceware passphrase.
+
+       edit [options] <database> <entry>
+	      Edits a database entry. A password can be generated (-g option),
+	      or a prompt can be displayed to input the password (-p option).
+
+       estimate [options] [password]
+	      Estimates the entropy of a password. The password to estimate
+	      can be provided as a positional argument, or using the standard
+	      input.
+
+       extract [options] <database>
+	      Extracts and prints the contents of a database to standard
+	      output in XML format.
+
+       generate [options]
+	      Generate a random password.
+
+       locate [options] <database> <term>
+	      Locates all the entries that match a specific search term in a
+	      database.
+
+       ls [options] <database> [group]
+	      Lists the contents of a group in a database. If no group is
+	      specified, it will default to the root group.
+
+       merge [options] <database1> <database2>
+	      Merges two databases together. The first database file is going
+	      to be replaced by the result of the merge, for that reason it is
+	      advisable to keep a backup of the two database files before
+	      attempting a merge. In the case that both databases make use of
+	      the same credentials, the --same-credentials or -s option can be
+	      used.
+
+       rm [options] <database> <entry>
+	      Removes an entry from a database. If the database has a recycle
+	      bin, the entry will be moved there. If the entry is already in
+	      the recycle bin, it will be removed permanently.
+
+       show [options] <database> <entry>
+	      Shows the title, username, password, URL and notes of a database
+	      entry. Can also show the current TOTP. Regarding the occurrence
+	      of multiple entries with the same name in different groups,
+	      everything stated in the clip command section also applies here.
+
+OPTIONS
+   General options
+       --debug-info
+	      Displays debugging information.
+
+       -k, --key-file <path>
+	      Specifies a path to a key file for unlocking the database. In a
+	      merge operation this option is used to specify the key file path
+	      for the first database.
+
+       --no-password
+	      Deactivate password key for the database.
+
+       -q, --quiet <path>
+	      Silence password prompt and other secondary outputs.
+
+       -h, --help
+	      Displays help information.
+
+       -v, --version
+	      Displays the program version.
+
+   Merge options
+       -f, --key-file-from <path>
+	      Path of the key file for the second database.
+
+       --no-password-from
+	      Deactivate password key for the database to merge from.
+
+       -s, --same-credentials
+	      Use the same credentials for unlocking both database.
+
+   Add and edit options
+       -u, --username <username>
+	      Specify the username of the entry.
+
+       --url <url>
+	      Specify the URL of the entry.
+
+       -p, --password-prompt
+	      Use a password prompt for the entry's password.
+
+       -g, --generate
+	      Generate a new password for the entry.
+
+       -l, --password-length
+	      Specify the length of the password to generate.
+
+   Edit options
+       -t, --title <title>
+	      Specify the title of the entry.
+
+   Estimate options
+       -a, --advanced
+	      Perform advanced analysis on the password.
+
+   Clip options
+       -t, --totp
+	      Copy the current TOTP instead of current password to clipboard.
+	      Will report an error if no TOTP is configured for the entry.
+
+   Show options
+       -a, --attributes <attribute>...
+	      Names of the attributes to show. This option can be specified
+	      more than once, with each attribute shown one-per-line in the
+	      given order. If no attributes are specified and -t is not
+	      specified, a summary of the default attributes is given.
+
+       -t, --totp
+	      Also show the current TOTP. Will report an error if no TOTP is
+	      configured for the entry.
+
+   Diceware options
+       -W, --words <count>
+	      Desired number of words for the generated passphrase. [Default:
+	      7]
+
+       -w, --word-list <path>
+	      Path of the wordlist for the diceware generator. The wordlist
+	      must have > 1000 words, otherwise the program will fail. If the
+	      wordlist has < 4000 words a warning will be printed to STDERR.
+
+   List options
+       -R, --recursive
+	      Recursively list the elements of the group.
+
+   Generate options
+       -L, --length <length>
+	      Desired length for the generated password. [Default: 16]
+
+       -l     Use lowercase characters for the generated password. [Default:
+	      Enabled]
+
+       -u     Use uppercase characters for the generated password. [Default:
+	      Enabled]
+
+       -n     Use numbers characters for the generated password. [Default:
+	      Enabled]
+
+       -s     Use special characters for the generated password. [Default:
+	      Disabled]
+
+       -e     Use extended ASCII characters for the generated password.
+	      [Default: Disabled]
+
+REPORTING BUGS
+       Bugs and feature requests can be reported on GitHub at
+       https://github.com/keepassxreboot/keepassxc/issues.
+
+AUTHOR
+       This manual page was originally written by Manolis Agkopian
+       <m.agkopian@gmail.com>, and is maintained by the KeePassXC Team
+       <team@keepassxc.org>.
+
+				 Nov 04, 2018		      KEEPASSXC-CLI(1)

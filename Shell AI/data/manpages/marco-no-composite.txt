@@ -1,0 +1,13 @@
+marco-no-composite(1)	    General Commands Manual	 marco-no-composite(1)
+
+NAME
+       marco-no-composite - Marco window manager wrapper
+
+SYNOPSIS
+       marco-no-composite
+
+DESCRIPTION
+       A wrapper for the Macro window manager that forcibly disables the
+       built-in software compositor.
+
+							 marco-no-composite(1)

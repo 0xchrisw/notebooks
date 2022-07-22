@@ -1,0 +1,36 @@
+EICIEL(1)		    General Commands Manual		     EICIEL(1)
+
+NAME
+       mate-eiciel - MATE ACL file permissions editor
+
+SYNOPSIS
+       mate-eiciel
+
+DESCRIPTION
+       mate-eiciel is a graphical editor of file ACLs for the GNOME
+       environment. In order to do something useful with it, you will need ACL
+       support in your system and in your filesystems.
+
+       Currently only Linux 2.6 (or a patched 2.4, see below) and FreeBSD 5.x
+       are supported.  Maybe in the future other systems may be supported as
+       well.
+
+       mate-eiciel also adds a page in the Caja file properties dialog that
+       you can reach by right-clicking over a file.
+
+BUGS
+       Don't doubt to report bugs to the author :)
+
+AUTHOR
+       Joel Barrios <darkshram@gmail.com> Based on Eiciel by Roger Ferrer
+       <rofirrim@gmail.com>
+
+HOMEPAGE
+       https://github.com/darkshram/mate-eiciel/
+
+SEE ALSO
+       acl(5) attr(5)
+
+       http://acl.bestbits.at - Home of the Linux 2.4 ACL support
+
+								     EICIEL(1)

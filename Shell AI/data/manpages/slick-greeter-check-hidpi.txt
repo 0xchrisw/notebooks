@@ -1,0 +1,15 @@
+SLICK-GREETER-CHECK_HIDPI(1)General Commands ManuaSLICK-GREETER-CHECK_HIDPI(1)
+
+NAME
+       slick-greeter-check-hidpi - distro agnostic LightDM greeter
+
+SYNOPSIS
+       slick-greeter-check-hidpi [ OPTIONS ]
+
+DESCRIPTION
+       Slick Greeter Check HiDPI simple check to see if the current resolution
+       is less that 1500px in height (returns 1) or returns 2 if the
+       resolution is considered as HiDPI.
+
+OPTIONS
+				 April 6, 2017	  SLICK-GREETER-CHECK_HIDPI(1)

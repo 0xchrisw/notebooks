@@ -1,0 +1,13 @@
+marco-compton(1)	    General Commands Manual	      marco-compton(1)
+
+NAME
+       marco-compton - Marco window manager wrapper
+
+SYNOPSIS
+       marco-compton
+
+DESCRIPTION
+       A wrapper for the Macro window manager that invokes Compton to enable
+       GLX accelerated compositing.
+
+							      marco-compton(1)

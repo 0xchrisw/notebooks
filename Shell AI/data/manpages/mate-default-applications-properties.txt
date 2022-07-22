@@ -1,0 +1,25 @@
+mate-default-applications-prGeneralsCommate-default-applications-properties(1)
+
+NAME
+       mate-default-applications-properties — is a control center applet.
+
+SYNOPSIS
+       mate-default-applications-properties [OPTIONS]...
+
+DESCRIPTION
+       MATE Default Applications Properties is a control center applet to edit
+       default applications.
+
+       It allows one to set default file manager, email client, web browser,
+       etc.
+
+OPTIONS
+       -p,  --show-page=PAGE
+		 Specify the name of the page to show
+		 (internet|multimedia|system|a11y)
+
+AUTHOR
+       This manual page was written by Stefano Karapetsas
+       <stefano@karapetsas.com>.
+
+				       mate-default-applications-properties(1)

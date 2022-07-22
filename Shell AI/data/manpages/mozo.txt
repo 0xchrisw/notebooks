@@ -1,0 +1,33 @@
+MOZO(1) 			General Manual			       MOZO(1)
+
+NAME
+       Mozo - MATE Menu Editor
+
+SYNOPSIS
+       mozo
+
+DESCRIPTION
+       Mozo is a menu editor for MATE using the freedesktop.org menu
+       specification. It is a fork of Alacarte.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mozo/issues
+
+AUTHORS
+   Mozo is maintained by:
+       Perberos <perberos@gmail.com>
+       Steve Zesch <stevezesch2@gmail.com>
+       Stefano Karapetsas <stefano@karapetsas.com>
+
+   This Manual Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   Alacarte was written by Travis Watkins. <alleykat@gmail.com>
+SEE ALSO
+   Mozo documentation can be found by pressing the F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+MATE Desktop Environment	5 February 2014 		       MOZO(1)

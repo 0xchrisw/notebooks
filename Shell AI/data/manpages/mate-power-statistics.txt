@@ -1,0 +1,27 @@
+MATE-POWER-STATISTICS(1)			      MATE-POWER-STATISTICS(1)
+
+NAME
+       mate-power-statistics - MATE power statistics GUI
+
+SYNOPSIS
+       mate-power-statistics [ --verbose ] [ --help ]
+
+DESCRIPTION
+       mate-power-statistics is the gui program for the mate power management
+       infrastructure.
+
+       It allows users to visualize the power consumption of laptop hardware.
+
+OPTIONS
+       --help Show summary of options.
+
+       --verbose
+	      Show extra debugging.
+
+SEE ALSO
+       mate-power-manager (1), mate-power-preferences (1).
+
+AUTHOR
+       This manual page was written by Simon Zheng <simon.zheng@sun.com>.
+
+			       11 December, 2007      MATE-POWER-STATISTICS(1)

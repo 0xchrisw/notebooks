@@ -1,0 +1,60 @@
+JESTER(6)			 Games Manual			     JESTER(6)
+
+NAME
+       jester - an X-based game similar to Othello(tm)
+
+SYNOPSIS
+       jester [{-display, -d, --display} display] [{-h, -help, --help}]
+       [-2players] [-ai {white, black}]
+
+DESCRIPTION
+       jester is an X-based game similar to the board game Othello.  jester
+       allows you to waste hours of otherwise productive time that could be
+       spent playing Solitaire instead.
+
+GAME PLAY
+       There are two players, one playing the white pieces, the other playing
+       the black pieces.  Each player takes turns placing a piece of his or
+       her color on an 8x8 board.  Each piece must be placed so as to bracket
+       a line of the opponent's pieces between two of the current player's
+       pieces.	When this happens, the opponent's pieces are replaced by
+       pieces of the current player's color.
+
+       When the cursor is over a square that it is legal for the current
+       player to play in, the cursor will change to a pointing hand.  A small
+       rectangle in the upper right side of the window shows the color of the
+       current player.
+
+       The game ends when a player cannot make a move, either because the
+       board is full or because the position of the pieces makes it impossible
+       to make a move.	At this point, the player with the most pieces on the
+       board is the winner.  You will be offered the option of starting a new
+       game.
+
+       You may exit at any time by clicking the “Exit” button.
+
+   OPTIONS
+       -d, -display, --display display
+	      Display on display.
+
+       -h, -help, --help
+	      Print a help message and exit.
+
+       -2players
+	      Play against another person at the same console.
+
+       -ai {white, black}
+	      Tell the computer which side to play.  The default behavior is
+	      equivalent to -ai black.
+
+ENVIRONMENT
+       jester uses the environment variable “DISPLAY” as the default display.
+       This can be overridden on the command line.
+
+BUGS
+       None known...
+
+AUTHOR
+       Matt Grossman ⟨mattg@oz.net⟩
+
+5/16/1998			  jester 1.0			     JESTER(6)

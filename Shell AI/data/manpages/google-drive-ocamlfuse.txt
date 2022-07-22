@@ -1,0 +1,76 @@
+GOOGLE-DRIVE-OCAMLFUSE(1)			     GOOGLE-DRIVE-OCAMLFUSE(1)
+
+NAME
+       google-drive-ocamlfuse - FUSE filesystem over Google Drive
+
+SYNOPSIS
+       google-drive-ocamlfuse [options] [mountpoint]
+
+DESCRIPTION
+       This program is a FUSE filesystem backed by Google Drive, written in
+       OCaml.  It lets you mount your Google Drive on Linux.
+
+       When run for the first time without parameters, google-drive-ocamlfuse
+       will create the default application directory (~/.gdfuse/default),
+       including the configuration file config.  Then it will start a web
+       browser to obtain authorization to access your Google Drive.
+
+       To mount the filesystem after authorization:
+
+		  google-drive-ocamlfuse mountpoint
+
+       If you have more than one account, you can run:
+
+		  google-drive-ocamlfuse -label label [mountpoint]
+
+       Using label to distinguish different accounts.  The program will use
+       the directory ~/.gdfuse/label to host configuration, application state,
+       and file cache.	No file is shared among different accounts, so you can
+       have a different configuration for each one.
+
+       To get a complete list of options, run google-drive-ocamlfuse -help.
+
+TROUBLESHOOTING
+       The filesystem can be mounted in read-only mode for extra protection
+       against bugs.  See the documentation for the configuration file.
+
+       An rm will only move your file to the trash, so you can roll back any
+       changes.
+
+       You can also turn on additional debug logging:
+
+		  google-drive-ocamlfuse -debug mountpoint
+
+       In ~/.gdfuse/default you can find curl.log that will track every
+       request to the Google Drive API, and gdfuse.log that will log FUSE
+       operations and cache management.
+
+       The cache may be cleared with:
+
+		  google-drive-ocamlfuse -cc
+
+       If something still doesn't work, try starting from scratch removing
+       everything in ~/.gdfuse/default.  In this case you will need to
+       reauthorize the application.
+
+BUGS
+       The application will query the server for changes every 60 seconds.
+       This improves performance; however, if you make a server-side change to
+       your documents, the filesystem won't see it for 60 seconds.  The number
+       of seconds between refreshes is configurable.
+
+       Google Documents will be exported read-only.
+
+FILES
+       ~/.gdfuse/default/config The configuration file
+
+SEE ALSO
+       Full documentation: <https://github.com/astrada/google-drive-
+       ocamlfuse/wiki>
+
+       Source code: <https://github.com/astrada/google-drive-ocamlfuse>
+
+AUTHORS
+       Alessandro Strada.
+
+google-drive-ocamlfuse manpage	 Sept 7, 2013	     GOOGLE-DRIVE-OCAMLFUSE(1)

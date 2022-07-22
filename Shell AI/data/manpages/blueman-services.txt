@@ -1,0 +1,19 @@
+BLUEMAN-SERVICES(1)	    General Commands Manual	   BLUEMAN-SERVICES(1)
+
+NAME
+       blueman-services - Configure local bluetooth services
+
+SYNOPSIS
+       blueman-services
+
+DESCRIPTION
+       blueman-servies is a graphical dialog for configuring local bluetooth
+       services
+
+OPTIONS
+       There are no options.
+
+AUTHOR
+       Valmantas Paliksa
+
+				     LOCAL		   BLUEMAN-SERVICES(1)

@@ -1,0 +1,29 @@
+PLUTIL(1)		    General Commands Manual		     PLUTIL(1)
+
+NAME
+       plutil - A converter tool for binary or XML Apple property lists
+
+SYNOPSIS
+       plutil -i|--infile in_file.plist -o|--outfile out_file.plist [--debug]
+
+OPTION
+       -i or --infile
+	      The file to read in.
+
+       -o or --outfile
+	      The file to convert to.
+
+       -d, -v or --debug
+	      Provide extended debug information.
+
+DESCRIPTION
+       plutil
+
+AUTHOR
+       plutil was written by Zach C..
+
+       This manual page was written by Julien Lavergne
+       <julien.lavergne@gmail.com>, for the Debian project (but may be used by
+       others).
+
+			       October 31, 2009 		     PLUTIL(1)

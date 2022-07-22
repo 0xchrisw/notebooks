@@ -1,0 +1,61 @@
+ifuse(1)		    General Commands Manual		      ifuse(1)
+
+NAME
+       ifuse - Mount directories of an iOS device locally using fuse.
+
+SYNOPSIS
+       ifuse MOUNTPOINT [OPTIONS]
+
+DESCRIPTION
+       Mount directories of an iOS device locally using fuse. By default the
+       media directory is mounted, options allow to also mount the sandbox
+       container of an app, an app's documents folder or even the root
+       filesystem on jailbroken devices.
+
+       Example:
+
+       $ ifuse /media/iPhone --root
+
+       This mounts the root filesystem of the first attached device on this
+       computer in the directory /media/iPhone.
+
+       Regular users are able to unmount fuse mounts using "fusermount -u
+       MOUNTPOINT".
+
+OPTIONS
+       -o opt,[opt...]
+	      mount options.
+
+       -u, --uuid UUID
+	      mount specific device by its 40-digit device UUID.
+
+       -h, --help
+	      prints usage information.
+
+       -V, --version
+	      print version.
+
+       -d, --debug
+	      enable libimobiledevice communication debugging.
+
+       --documents APPID
+	      mount 'Documents' folder of app identified by APPID.
+
+       --container APPID
+	      mount sandbox root of an app identified by APPID.
+
+       --root mount root file system (jailbroken device required).
+
+AUTHOR
+       Julien Lavergne (man page)
+
+       Martin Szulecki
+
+       Matt Colyer
+
+       Nikias Bassen
+
+SEE ALSO
+       fusermount(1)
+
+								      ifuse(1)

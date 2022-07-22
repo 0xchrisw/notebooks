@@ -1,0 +1,21 @@
+msd-datetime-mechanism(1)    MATE-SETTINGS-DAEMON    msd-datetime-mechanism(1)
+
+NAME
+       msd-datetime-mechanism - set system time via D-Bus
+
+SYNOPSIS
+       msd-datetime-mechanism
+
+DESCRIPTION
+       The msd-datetime-mechanism is used for setting the system time via D-
+       Bus.  msd-datetime-mechanism is a D-Bus wrapper that gets executed via
+       D-Bus with root privileges.  The execution of msd-datetime-mechanism
+       gets triggered via the MATE clock applet.
+
+AUTHOR
+       This manual page has been written by Vangelis Mouhtsis
+       <vangelis@gnugr.org> and Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de>.  It has been originally written for the Debian
+       project (but may be used by others).
+
+				   Oct 2014	     msd-datetime-mechanism(1)

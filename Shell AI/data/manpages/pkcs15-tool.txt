@@ -1,0 +1,178 @@
+PKCS15-TOOL(1)			 OpenSC Tools			PKCS15-TOOL(1)
+
+NAME
+       pkcs15-tool - utility for manipulating PKCS #15 data structures on
+       smart cards and similar security tokens
+
+SYNOPSIS
+       pkcs15-tool [OPTIONS]
+
+DESCRIPTION
+       The pkcs15-tool utility is used to manipulate the PKCS #15 data
+       structures on smart cards and similar security tokens. Users can list
+       and read PINs, keys and certificates stored on the token. User PIN
+       authentication is performed for those operations that require it.
+
+OPTIONS
+       --version,
+	   Print the OpenSC package release version.
+
+       --aid aid
+	   Specify in a hexadecimal form the AID of the on-card PKCS#15
+	   application to bind to.
+
+       --auth-id pin, -a pin
+	   Specifies the auth id of the PIN to use for the operation. This is
+	   useful with the --change-pin operation.
+
+       --change-pin
+	   Changes a PIN or PUK stored on the token. User authentication is
+	   required for this operation.
+
+       --dump, -D
+	   List all card objects.
+
+       --list-info
+	   List card objects.
+
+       --list-applications
+	   List the on-card PKCS#15 applications.
+
+       --list-certificates, -c
+	   List all certificates stored on the token.
+
+       --list-data-objects, -C
+	   List all data objects stored on the token. For some cards the
+	   PKCS#15 attributes of the private data objects are protected for
+	   reading and need the authentication with the User PIN. In such a
+	   case the --verify-pin option has to be used.
+
+       --list-keys, -k
+	   List all private keys stored on the token. General information
+	   about each private key is listed (eg. key name, id and algorithm).
+	   Actual private key values are not displayed. For some cards the
+	   PKCS#15 attributes of the private keys are protected for reading
+	   and need the authentication with the User PIN. In such a case the
+	   --verify-pin option has to be used.
+
+       --list-secret-keys
+	   List all secret (symmetric) keys stored on the token. General
+	   information about each secret key is listed (eg. key name, id and
+	   algorithm). Actual secret key values are not displayed. For some
+	   cards the PKCS#15 attributes of the private keys are protected for
+	   reading and need the authentication with the User PIN. In such a
+	   case the --verify-pin option has to be used.
+
+       --list-pins
+	   List all PINs stored on the token. General information about each
+	   PIN is listed (eg. PIN name). Actual PIN values are not shown.
+
+       --list-public-keys
+	   List all public keys stored on the token, including key name, id,
+	   algorithm and length information.
+
+       --short -s
+	   Output lists in compact format.
+
+       --no-cache
+	   Disables token data caching.
+
+       --clear-cache
+	   Removes the user's cache directory. On Windows, this option
+	   additionally removes the system's caching directory (requires
+	   administrator privileges).
+
+       --clear-cache
+	   Removes the user's cache directory. On Windows, this option
+	   additionally removes the system's caching directory (requires
+	   administrator privileges).
+
+       --output filename, -o filename
+	   Specifies where key output should be written. If filename already
+	   exists, it will be overwritten. If this option is not given, keys
+	   will be printed to standard output.
+
+       --raw
+	   Changes how --read-data-object prints the content to standard
+	   output. By default, when --raw is not given, it will print the
+	   content in hex notation. If --raw is set, it will print the binary
+	   data directly. This does not affect the output that is written to
+	   the file specified by the --output option. Data written to a file
+	   will always be in raw binary.
+
+       --read-certificate cert
+	   Reads the certificate with the given id.
+
+       --read-data-object cert, -R data
+	   Reads data object with OID, applicationName or label. The content
+	   is printed to standard output in hex notation, unless the --raw
+	   option is given. If an output file is given with the --output
+	   option, the content is additionally written to the file. Output to
+	   the file is always written in raw binary mode, the --raw only
+	   affects standard output behavior.
+
+       --read-public-key id
+	   Reads the public key with id id, allowing the user to extract and
+	   store or use the public key.
+
+       --read-ssh-key id
+	   Reads the public key with id id, writing the output in format
+	   suitable for $HOME/.ssh/authorized_keys.
+
+	   The key label, if any will be shown in the 'Comment' field.
+
+	   --rfc4716
+	       When used in conjunction with option --read-ssh-key the output
+	       format of the public key follows rfc4716.
+
+	   The default output format is a single line (openssh).
+
+       --test-update, -T,
+	   Test if the card needs a security update
+
+       --update, -U,
+	   Update the card with a security update
+
+       --reader arg
+	   Number of the reader to use. By default, the first reader with a
+	   present card is used. If arg is an ATR, the reader with a matching
+	   card will be chosen.
+
+       --unblock-pin, -u
+	   Unblocks a PIN stored on the token. Knowledge of the Pin Unblock
+	   Key (PUK) is required for this operation.
+
+       --verbose, -v
+	   Causes pkcs15-tool to be more verbose. Specify this flag several
+	   times to enable debug output in the OpenSC library.
+
+       --pin PIN
+	   Specify PIN
+
+       --puk PUK
+	   Specify Unblock PIN
+
+       --new-pin PIN
+	   Specify New PIN (when changing or unblocking)
+
+       --verify-pin
+	   Verify PIN after card binding and before issuing any command
+	   (without 'auth-id' the first non-SO, non-Unblock PIN will be
+	   verified)
+
+       --test-session-pin
+	   Equivalent to --verify-pin with additional session PIN generation
+
+       --wait, -w
+	   Causes pkcs15-tool to wait for a card insertion.
+
+       --use-pinpad
+	   Do not prompt the user; if no PINs supplied, pinpad will be used.
+
+SEE ALSO
+       pkcs15-init(1), pkcs15-crypt(1)
+
+AUTHORS
+       pkcs15-tool was written by Juha Yrjölä <juha.yrjola@iki.fi>.
+
+opensc				  01/28/2020			PKCS15-TOOL(1)

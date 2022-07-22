@@ -1,0 +1,43 @@
+mate-control-center(1)	    General Commands Manual	mate-control-center(1)
+
+NAME
+       mate-control-center - Configure MATE settings
+
+SYNOPSIS
+       mate-control-center [OPTION...]
+
+DESCRIPTION
+       mate-control-center is a graphical user interface to configure various
+       aspects of MATE.
+
+       When run without arguments, the shell displays the control center
+       overview, which shows all available configuration panels. The overview
+       allows one to open individual panels by clicking on them. It also has a
+       search entry to find panels by searching keywords.
+
+OPTIONS
+       -?, --help
+	      Print the application's help options and exit.
+
+       --help-gtk
+	      Print GTK help options and exit.
+
+       --help-all
+	      Print application and GTK help options and exit.
+
+       --hide Hide on start (useful for preloading the shell).
+
+       --display=DISPLAY
+	      X display to use.
+
+       This program additionally accepts the standard MATE and GTK options (as
+       listed with --help-gtk).
+
+EXIT STATUS
+       On success 0 is returned, a non-zero failure code otherwise.
+
+AUTHORS
+       This manual page has been adopted for MATE Desktop Environment by
+       Vangelis Mouhtsis <vangelis@gnugr.org>.
+
+MATE				  2014-05-02		mate-control-center(1)

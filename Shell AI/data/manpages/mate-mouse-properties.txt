@@ -1,0 +1,34 @@
+mate-mouse-properties(1)    General Commands Manual   mate-mouse-properties(1)
+
+NAME
+       mate-mouse-properties - configure MATE mouse preferences
+
+SYNOPSIS
+       mate-mouse-properties [--get-legacy]
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       The MATE  mouse	preference  tool  enables you to configure your mouse
+       for right-hand or left-hand use. It is also used to specify the speed
+       and sensitivity of mouse movement and mouse button press events.
+
+OPTIONS
+       The following options are supported:
+
+       --get-legacy
+	      Retrieve and store legacy settings
+
+       This program also accepts the standard MATE and GTK options.
+
+AUTHORS
+       This manual page has been adopted for MATE by Vangelis Mouhtsis
+       <vangelis@gnugr.org>.
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), gtk-options(7)
+
+MATE				  2014-05-02	      mate-mouse-properties(1)

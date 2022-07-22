@@ -1,0 +1,21 @@
+atril-previewer(1)	    General Commands Manual	    atril-previewer(1)
+
+NAME
+       atril-previewer - show print preview for a document
+
+SYNOPSIS
+       atril-previewer [file]
+
+DESCRIPTION
+       atril-previewer is a MATE program to show print preview dialog for
+       files supported by atril.
+
+OPTIONS
+       atril-previewer obeys all normal GTK+ command line options.
+
+SEE ALSO
+       atril(1), gtk-options(7).
+
+       https://mate-desktop.org/
+
+				  2007-01-15		    atril-previewer(1)

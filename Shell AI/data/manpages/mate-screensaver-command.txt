@@ -1,0 +1,64 @@
+mate-screensaver-command(1) General Commands Manualmate-screensaver-command(1)
+
+NAME
+       mate-screensaver-command - controls MATE screensaver
+
+SYNOPSIS
+       mate-screensaver-command [OPTION...]
+
+DESCRIPTION
+       mate-screensaver-command is a tool for controlling an already running
+       instance of mate-screensaver.
+
+OPTIONS
+       --exit Causes the screensaver to exit gracefully
+
+       -q, --query
+	      Query the state of the screensaver
+
+       -t, --time
+	      Query the length of time the screensaver has been active
+
+       -l, --lock
+	      Tells the running screensaver process to lock the screen
+	      immediately
+
+       -u, --unlock
+	      Tells the running screensaver process to unlock the screen
+	      immediately
+
+       -c, --cycle
+	      If the screensaver is active then switch to another graphics
+	      demo
+
+       -a, --activate
+	      Turn the screensaver on (blank the screen)
+
+       -d, --deactivate
+	      If the screensaver is active then deactivate it (un-blank the
+	      screen)
+
+       -p, --poke
+	      Poke the running screensaver to simulate user activity
+
+       -i, --inhibit
+	      Inhibit the screensaver from activating. Command blocks while
+	      inhibit is active.
+
+       -n, --application-name
+	      The calling application that is inhibiting the screensaver
+
+       -r, --reason
+	      The reason for inhibiting the screensaver
+
+       -V, --version
+	      Version of this application
+
+AUTHORS
+       This manual page was originally written by Sven Arvidsson <sa@whiz.se>
+       for gnome-screensaver-command.
+
+SEE ALSO
+       mate-screensaver(1)
+
+MATE				  2007-09-27	   mate-screensaver-command(1)

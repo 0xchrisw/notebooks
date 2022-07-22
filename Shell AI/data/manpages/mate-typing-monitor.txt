@@ -1,0 +1,41 @@
+mate-typing-monitor(1)	    General Commands Manual	mate-typing-monitor(1)
+
+NAME
+       mate-typing-monitor - take a break from typing
+
+SYNOPSIS
+       mate-typing-monitor [OPTIONS...]
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       If you use too much computer you may be risking your health. Use this
+       tool for reminding yourself to take little (typing) breaks in regular
+       intervals.
+
+       During the break, you can:
+
+	 o Stretch arms and legs
+
+	 o Open the window and breathe in
+
+	 o Juggle with balls or clubs
+
+	 o Close and rub your eyes
+
+	 o Have some fine green or herbal tea
+
+OPTIONS
+       This program accepts the standard MATE and GTK options.
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), gtk-options(7)
+
+MATE				  2014-05-02		mate-typing-monitor(1)

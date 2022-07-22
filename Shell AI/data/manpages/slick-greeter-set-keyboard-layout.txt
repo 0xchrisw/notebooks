@@ -1,0 +1,10 @@
+SLICK-GREETER-SET-KEYBOARD-LAYOUTUser commSLICK-GREETER-SET-KEYBOARD-LAYOUT(1)
+
+NAME
+       slick-greeter-set-keyboard-layout - switch keyboard layout
+
+DESCRIPTION
+       internal executable to switch the keyboard layout
+
+OPTIONS
+Linux				  2019-07-SLICK-GREETER-SET-KEYBOARD-LAYOUT(1)

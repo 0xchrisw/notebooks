@@ -1,0 +1,22 @@
+msd-locate-pointer(1)	     MATE-SETTINGS-DAEMON	 msd-locate-pointer(1)
+
+NAME
+       msd-locate-pointer - create ripples around mouse pointer
+
+SYNOPSIS
+       msd-locate-pointer
+
+DESCRIPTION
+       The msd-locate-pointer utility is a program that creates ripples (like
+       throwing a stone into water) around the mouse pointer. This helps to
+       locate the position of the mousepointer.
+
+       With mate-settings-daemon i is possible to assign a hotkey for evoking
+       the msd-locate-pointer command.
+
+AUTHOR
+       This manual page has been written by Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de>.  It has been originally written for the Debian
+       project (but may be used by others)
+
+				   Oct 2014		 msd-locate-pointer(1)

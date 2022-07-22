@@ -1,0 +1,34 @@
+idevicedate(1)		    General Commands Manual		idevicedate(1)
+
+NAME
+       idevicedate - Display the current date or set it on a device.
+
+SYNOPSIS
+       idevicedate [OPTIONS]
+
+DESCRIPTION
+       Simple utility to manage the clock on a device.
+
+OPTIONS
+       -d, --debug
+	      enable communication debugging.
+
+       -u, --udid UDID
+	      target specific device by UDID.
+
+       -s, --set TIMESTAMP
+	      set UTC time described by TIMESTAMP
+
+       -c, --sync
+	      set time of device to current system time
+
+       -h, --help
+	      prints usage information
+
+AUTHOR
+       Martin Szulecki
+
+ON THE WEB
+       http://libimobiledevice.org
+
+								idevicedate(1)

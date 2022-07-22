@@ -1,0 +1,31 @@
+mate-keybinding-properties(1General Commands Manumate-keybinding-properties(1)
+
+NAME
+       mate-keybinding-properties - configure MATE keybindings
+
+SYNOPSIS
+       mate-keybinding-properties [OPTIONS...]
+
+DESCRIPTION
+       This executable is part of the package 'mate-control-center': The MATE
+       Control Center.
+
+       The MATE  keybindings preference tool enables you to display the
+       default keyboard shortcuts and customize them to your requirements.
+
+       You can also create hot keys. Hot keys  are keyboard shortcuts that
+       start applications or perform other useful actions.
+
+OPTIONS
+       This program accepts the standard MATE and GTK options.
+
+AUTHORS
+       This manual page was writtenby Mike Gabriel <mike.gabriel@das-
+       netzwerkteam.de> for the Debian project (but may be used by others).
+
+SEE ALSO
+       Latest version of the MATE Desktop User Guide for your platform.
+
+       mate-control-center(1), gtk-options(7)
+
+MATE				  2014-05-02	 mate-keybinding-properties(1)

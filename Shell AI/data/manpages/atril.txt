@@ -1,0 +1,85 @@
+ATRIL(1)		    General Commands Manual		      ATRIL(1)
+
+NAME
+       Atril - The MATE Document Viewer
+
+SYNTAX
+       atril [OPTIONS...] [FILES...]
+
+DESCRIPTION
+       Atril is the official Document Viewer of the MATE Desktop Environment,
+       it is a simple multi-page document viewer. It can display and print
+       PostScript (PS), Encapsulated PostScript (EPS), DJVU, DVI, XPS and
+       Portable Document Format (PDF) files.
+
+       When supported by the document, it also allows searching for text,
+       copying text to the clipboard, hypertext navigation, and table-of-
+       contents bookmarks.
+
+       This manual page briefly documents the atril command.
+
+OPTIONS
+       filename(s)...
+	      Specifies the file to open when atril starts. If this is not
+	      specified, atril will start with a blank window and you may open
+	      a file from the menu or by using the shortcut CTRL+O. Multiple
+	      files can be loaded if they are separated by spaces. atril also
+	      supports handling of remote files.
+
+       -p, --page-label=PAGE
+	      Here you can specify a page label, this page will be selected in
+	      the document if it exists.
+
+       -i, --page-index=NUMBER
+	      Here you can specify a page number, this page will be selected
+	      in the document if it exists.
+
+       -f, --fullscreen
+	      Start atril in fullscreen mode. You must specify a document to
+	      start in fullscreen mode.
+
+       -s, --presentation
+	      Start atril in presentation mode. You must specify a document to
+	      start in presentation mode.
+
+       -w, --preview
+	      Start atril in preview mode. You must specify a document to
+	      start in preview mode.
+
+       --display=DISPLAY
+	      X display to use.
+
+       --version
+	      Output version information and exit.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       atril --preview ~/Desktop/stuff.ps
+	   Open stuff.ps from the current users desktop, in preview mode.
+
+       atril -i 2 -s ./document.pdf
+	   Open document.pdf from the current working directory, on page 2 in
+	   presentation mode.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/atril/issues
+
+AUTHORS
+   This Man Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Atril documentation can be found from the "Help" menu, or by pressing the
+       F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+MATE Desktop Environment	30 January 2014 		      ATRIL(1)

@@ -1,0 +1,32 @@
+zstreamdump(8)		System Administration Commands		zstreamdump(8)
+
+NAME
+       zstreamdump - filter data in zfs send stream
+
+SYNOPSIS
+       zstreamdump [-C] [-v] [-d]
+
+DESCRIPTION
+       The zstreamdump utility reads from the output of the zfs send command,
+       then displays headers and some statistics from that output.  See
+       zfs(8).
+
+OPTIONS
+       The following options are supported:
+
+       -C
+
+	   Suppress the validation of checksums.
+
+       -v
+
+	   Verbose. Dump all headers, not only begin and end headers.
+
+       -d
+
+	   Dump contents of blocks modified. Implies verbose.
+
+SEE ALSO
+       zfs(8)
+
+ZFS pool 28, filesystem 5	  29 Aug 2012			zstreamdump(8)

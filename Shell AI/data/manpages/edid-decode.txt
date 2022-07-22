@@ -1,0 +1,120 @@
+edid-decode(1)		    General Commands Manual		edid-decode(1)
+
+NAME
+       edid-decode - Decode EDID data in human-readable format
+
+SYNOPSIS
+       edid-decode <options> [in [out]]
+
+DESCRIPTION
+       edid-decode decodes EDID monitor description data in human-readable
+       format.	If [in] is not given, or [in] is '-', then the EDID will be
+       read from standard input. If [out] is given then the EDID that was read
+       from [in] is written to [out] or to standard output if [out] is '-'. By
+       default the output is written as a hex dump when writing to standard
+       output or a raw EDID if written to a file.
+
+       If [out] is given then edid-decode only does the conversion, it will
+       skip the decoding step.
+
+       Input files may be raw binaries or ASCII text.  ASCII input is scanned
+       for hex dumps; heuristics are included to search for hexdumps in edid-
+       decode(1) output (as long as the initial hex dump was included),
+       xrandr(1) property output and Xorg(1) log file formats, otherwise the
+       data is treated as a raw hexdump.  EDID blocks for connected monitors
+       can be found in /sys/class/drm/*/edid on modern Linux systems with
+       kernel modesetting support.
+
+STANDARDS
+       The following EDID standards are supported by edid-decode:
+
+	      EDID 1.3: VESA Enhanced Extended Display Identication Data
+	      Standard, Release A, Revision 1
+
+	      EDID 1.4: VESA Enhanced Extended Display Identication Data
+	      Standard, Release A, Revision 2
+
+	      DisplayID 1.3: VESA Display Identification Data (DisplayID)
+	      Standard, Version 1.3
+
+	      DisplayID 2.0: VESA DisplayID Standard, Version 2.0
+
+	      DI-EXT: VESA Display Information Extension Block Standard,
+	      Release A
+
+	      LS-EXT: VESA Enhanced EDID Localized String Extension Standard,
+	      Release A
+
+	      VTB-EXT: VESA Video Timing Block Extension Data Standard,
+	      Release A
+
+	      HDMI 1.4b: High-Definition Multimedia Interface, Version 1.4b
+
+	      HDMI 2.1: High-Definition Multimedia Interface, Version 2.1
+
+	      HDMI 2.1: Amendment A1 to HDMI Specification Version 2.1
+
+	      CTA-861-G: A DTV Profile for Uncompressed High Speed Digital
+	      Interfaces
+
+	      SPWG Notebook Panel Specification, Version 3.5
+
+	      EPI Embedded Panel Interface, Revision 1.0
+
+OPTIONS
+       -h, --help
+	      Prints the help message.
+
+       -o, --output-format=<fmt>
+	      If [out] is specified, then write the EDID in format <fmt>.
+	      The output format can be one of:
+	      hex: hex numbers in ascii text (default for stdout)
+	      raw: binary data (default unless writing to stdout)
+	      carray: c-program struct
+
+       -c, --check
+	      Check if the EDID conforms to the standards. Warnings and
+	      failures are reported at the end.
+
+       -C, --check-inline
+	      Check if the EDID conforms to the standards. Warnings and
+	      failures are reported as they happen.
+
+       -s, --skip-hex-dump
+	      Skip the initial hex dump of the EDID.
+
+       --skip-sha
+	      Don't show the SHA hash. Normally edid-decode will show the SHA,
+	      i.e. the hash of the git commit used to compile edid-decode.
+	      This uniquely identifies the version of edid-decode that is used
+	      to generate the warnings and failures. But it will also change
+	      the output of edid-decode for every new commit in the git
+	      repository, even if nothing else changed in the edid-decode
+	      output.  Use this option to avoid including the SHA in the edid-
+	      decode output.
+
+       -e, --extract
+	      Extract the contents of the first block in hex values.  This was
+	      always done in old edid-decode versions. To get the same
+	      behavior add this option.
+
+NOTES
+       Not all fields are decoded, or decoded completely.  Some fields'
+       decoding may appear to corrupt the output (for example, detailed string
+       sections have their contents printed literally).  edid-decode does
+       attempt to validate its input against the relevant standards, but its
+       opinions have not been double-checked with the relevant standards
+       bodies, so they may be wrong.  Do not rely on the output format, as it
+       will likely change in future versions of the tool as additional fields
+       and extensions are added.
+
+SEE ALSO
+       Xorg(1), xrandr(1)
+
+AUTHORS
+       edid-decode was written by Adam Jackson, with contributions from Eric
+       Anholt, Damien Lespiau, Hans Verkuil and others.  For complete history
+       and the latest version, see http://git.linuxtv.org/cgit.cgi/edid-
+       decode.git
+
+								edid-decode(1)

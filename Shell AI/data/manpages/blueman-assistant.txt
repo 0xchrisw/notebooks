@@ -1,0 +1,21 @@
+BLUEMAN-ASSISTANT(1)	    General Commands Manual	  BLUEMAN-ASSISTANT(1)
+
+NAME
+       blueman-assistant - application for configuring and pairing bluetooth
+       devices
+
+SYNOPSIS
+       blueman-assistant [options]
+
+DESCRIPTION
+       blueman-assistant configures specified device, if there is no device
+       specified, it will display a dialog to choose from.
+
+OPTIONS
+       --device=ADDRESS
+	      Address of the device to configure
+
+AUTHOR
+       Valmantas Paliksa
+
+				     LOCAL		  BLUEMAN-ASSISTANT(1)

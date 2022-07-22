@@ -1,0 +1,99 @@
+ENGRAMPA(1)		    General Commands Manual		   ENGRAMPA(1)
+
+NAME
+       Engrampa - Archive Manager for MATE
+
+SYNOPSIS
+       engrampa [OPTIONS...] [FILES...]
+
+DESCRIPTION
+       Engrampa is the official archive manager for the MATE Desktop
+       Environment, it is a graphical front-end to archiving utilities such as
+       tar and zip. It is a fork of File Roller.
+
+       Engrampa supports most common operations such as creating, modifying
+       and extracting files from an archive. You can also view the contents of
+       an archive and open files contained within the archive.
+
+       This manual page briefly documents the engrampa command.
+
+OPTIONS
+       filename(s)...
+	      Specifies the archive file to open when engrampa starts. If this
+	      is not specified, engrampa will start with a blank window and
+	      you may open an archive from the menu or by using the shortcut
+	      CTRL+O.
+
+       -a, --add-to=ARCHIVE
+	      Add files to the specified archive and quit the program
+
+       -d, --add FILE
+	      Add files asking the name of the archive and quit the program
+
+       -e, --extract-to=FOLDER
+	      Extract archives to the specified folder and quit the program
+
+       -f, --extract
+	      Extract archives asking the destination folder and quit the
+	      program
+
+       -h, --extract-here
+	      Extract archives using the archive name as destination folder
+	      and quit the program
+
+       --default-dir=FOLDER
+	      Default folder to use for the '--add' and '--extract' commands
+
+       --force
+	      Create destination folder without asking confirmation
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       --version
+	      Show the application's version.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       engrampa -h matelivecd.iso
+	   Extract matelivecd.iso to ./matelivecd in the current working
+	   directory.
+
+       engrampa ./matelivecd/* -a matelivecd.tar.gz
+	   Create a new gzip compressed tarball archive named
+	   matelivecd.tar.gz, containing all the files located in the
+	   ./matelivecd directory.
+
+       engrampa matelivecd.tar.gz
+	   Open matelivecd.tar.gz to view and manipulate its contents.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/engrampa/issues
+
+AUTHORS
+   Engrampa is written by Paolo Bacchilega <paolo.bacch@tin.it> and Perberos
+       <perberos@gmail.com>.
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Stefano Karapetsas <stefano@karapetsas.com> (2014)
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+       This manual page was originally written for the Debian Project by Sven
+       Arvidsson <sa@whiz.se>, for File Roller. (2007)
+
+SEE ALSO
+   Engrampa documentation can be found from the "Help" menu, or by pressing
+       the F1 key.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+MATE Desktop Environment	1 February 2014 		   ENGRAMPA(1)

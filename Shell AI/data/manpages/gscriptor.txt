@@ -1,0 +1,31 @@
+GSCRIPTOR(1p)							 GSCRIPTOR(1p)
+
+NAME
+       gscriptor - Perl script to send commands to a smart card using a Gtk
+       GUI
+
+SYNOPSIS
+       gscriptor
+
+DESCRIPTION
+       This manual page documents briefly the gscriptor command.
+
+       gscriptor is a program that sends commands to a smart card using a
+       batch file. The syntax of the commands is the same as for scriptor(1).
+
+       scriptor(1) is in text mode. gscriptor(1) uses a Perl-Gtk graphical
+       user interface and may be more user friendly.
+
+       See scriptor(1) for details on the comands format.
+
+OPTIONS
+       none
+
+SEE ALSO
+       pcscd(1),scriptor(1)
+
+AUTHOR
+       This manual page was written by Ludovic Rousseau <rousseau@debian.org>,
+       for the Debian GNU/Linux system (but may be used by others).
+
+			       octobre 19, 2001 		 GSCRIPTOR(1p)

@@ -1,0 +1,39 @@
+ideviceinfo(1)		    General Commands Manual		ideviceinfo(1)
+
+NAME
+       ideviceinfo - Show information about the first connected device.
+
+SYNOPSIS
+       ideviceinfo [OPTIONS]
+
+DESCRIPTION
+       Show information about the first connected device.
+
+OPTIONS
+       -d, --debug
+	      enable communication debugging.
+
+       -u, --udid UDID
+	      target specific device by UDID.
+
+       -q, --domain NAME
+	      set domain of query to NAME. Default: None.
+
+       -k, --key NAME
+	      only query key specified by NAME. Default: All keys.
+
+       -x, --xml
+	      output information as xml plist instead of key/value pairs.
+
+       -h, --help
+	      prints usage information
+
+AUTHOR
+       Martin Szulecki
+
+       Man page written to conform with Debian by Julien Lavergne.
+
+ON THE WEB
+       http://libimobiledevice.org
+
+								ideviceinfo(1)

@@ -1,0 +1,22 @@
+MATE-CALC-CMD(1)		General Manual		      MATE-CALC-CMD(1)
+
+NAME
+       mate-calc-cmd - A console calculator for the MATE Desktop Environment.
+
+SYNOPSIS
+       mate-calc-cmd
+
+DESCRIPTION
+       mate-calc-cmd is the console version of mate-calc, the calculator for
+       the MATE Desktop Environment.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-calc/issues
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-calc(1)
+
+MATE Desktop Environment	1 February 2014 	      MATE-CALC-CMD(1)

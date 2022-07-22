@@ -1,0 +1,39 @@
+ZGENHOSTID(8)		    System Manager's Manual		 ZGENHOSTID(8)
+
+NAME
+     zgenhostid — generate and store a hostid in /etc/hostid
+
+SYNOPSIS
+     zgenhostid [hostid]
+
+DESCRIPTION
+     If /etc/hostid does not exist, create it and store a hostid in it.  If
+     the user provides [hostid] on the command line, store that value.
+     Otherwise, randomly generate a value to store.
+
+     This emulates the genhostid(1) utility and is provided for use on systems
+     which do not include the utility.
+
+OPTIONS
+     [hostid] Specifies the value to be placed in /etc/hostid.	It must be a
+     number with a value between 1 and 2^32-1.	This value must be unique
+     among your systems.  It must be expressed in hexadecimal and be exactly 8
+     digits long.
+
+EXAMPLES
+     Generate a random hostid and store it
+
+	     # zgenhostid
+
+     Record the libc-generated hostid in /etc/hostid
+
+	     # zgenhostid $(hostid)
+
+     Record a custom hostid (0xdeadbeef) in etc/hostid
+
+	     # zgenhostid deadbeef
+
+SEE ALSO
+     genhostid(1), hostid(1), spl-module-parameters(5)
+
+Linux			      September 16, 2017			 Linux

@@ -1,0 +1,99 @@
+MATE-SESSION(1) 	    General Commands Manual	       MATE-SESSION(1)
+
+NAME
+       mate-session - Start the MATE Desktop Environment.
+
+SYNOPSIS
+       mate-session [OPTIONS]
+
+DESCRIPTION
+       The mate-session program starts up the MATE desktop environment. This
+       command is typically executed by your Login/Display Manager (like GDM,
+       LXDM, XDM, SLiM, or from your X startup scripts like .xinitrc). It will
+       load either your saved session, or it will provide a default session
+       for the user as defined by the system administrator (or the default
+       MATE installation on your system).
+
+       The default session is defined in the dconf keys under
+       /org/mate/desktop/session/
+       When saving a session, mate-session saves the currently running
+       applications in the ~/.config/mate-session/saved-session directory of
+       the users /home.
+
+       mate-session is an X11 session manager. It can manage MATE applications
+       as well as any other X11 SM compliant ones.
+
+OPTIONS
+   The following options are supported:
+       -a, --autostart=DIR
+	      Start all applications defined in "DIR", instead of starting the
+	      applications defined in
+	      /org/mate/desktop/session/default-session
+	      Multiple --autostart options can be passed.
+
+       -f, --failsafe
+	      Run in fail-safe mode. User-specified applications will not be
+	      started.
+
+       --debug
+	      Enable debugging code.
+
+       --display=DISPLAY
+	      X display to use.
+
+       --version
+	      Output version information and exit.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+ENVIRONMENT
+   mate-session sets several environment variables for the use of its child
+       processes:
+       SESSION_MANAGER
+
+	      This variable is used by session-manager aware clients to
+	      contact mate-session.
+
+       DISPLAY
+
+	      This variable is set to the X display being used by mate-
+	      session. Note that if the --display option is used this might be
+	      different from the setting of the environment variable when
+	      mate-session is invoked.
+
+FILES
+       ~/.config/autostart
+       /usr/share/autostart
+       /usr/share/mate/autostart
+
+	      The applications defined in the above directories will be
+	      started on login. mate-session-properties(1) can be used to
+	      easily configure them.
+
+       ~/.config/mate-session/saved-session
+
+	      This directory contains the list of applications of the saved
+	      session.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-session-manager/issues
+
+AUTHORS
+   This Manual page was originally written for gnome-session by:
+       Miguel de Icaza <miguel@helixcode.com> (2000)
+       Vincent Untz <vuntz@gnome.org> (2009-2010)
+
+   It has been updated for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-session-properties(1), mate-session-save(1), mate-wm(1)
+
+MATE Desktop Environment       11 February 2014 	       MATE-SESSION(1)

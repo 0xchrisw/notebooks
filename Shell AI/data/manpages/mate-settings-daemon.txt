@@ -1,0 +1,40 @@
+MATE-SETTINGS-DAEMON(1)     General Commands Manual    MATE-SETTINGS-DAEMON(1)
+
+NAME
+       mate-settings-daemon - Handles the MATE session settings
+
+SYNOPSIS
+       mate-settings-daemon [--debug] [--replace] [--display=DISPLAY]
+
+DESCRIPTION
+       mate-settings-daemon is responsible for setting the various preference
+       parameters of a MATE session and the applications that run under it.
+
+OPTIONS
+       Help options
+
+       -?, --help
+	      Show this help message
+
+       Application options
+
+       --debug
+	      Enable debugging code
+
+       --replace
+	      Replaces the current running daemon
+
+       --display=DISPLAY
+	      X display to use
+
+AUTHOR
+       mate-settings-daemon was written by Jonathan Blandford <jrb@redhat.com>
+       and William Jon McCann <mccann@jhu.edu>.
+
+       This manual page was originally written by Joshua Cummings
+       <jrac@internode.on.net>.
+
+       This manual page was adopted for MATE by Vangelis Mouhtsis
+       <vangelis@gnugr.org>.
+
+				 June 25 2009	       MATE-SETTINGS-DAEMON(1)

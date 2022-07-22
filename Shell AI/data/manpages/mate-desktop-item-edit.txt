@@ -1,0 +1,49 @@
+MATE-DESKTOP-ITEM-EDIT(1)   General Commands Manual  MATE-DESKTOP-ITEM-EDIT(1)
+
+NAME
+       mate-desktop-item-edit - A small tool to edit .desktop files.
+
+SYNOPSIS
+       mate-desktop-item-edit [OPTIONS] [FILE]
+
+DESCRIPTION
+       Distributed with mate-panel, mate-desktop-item-edit allows you to edit
+       .desktop files.
+
+OPTIONS
+       --create-new
+	      Create a new file in the given directory.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+EXAMPLES
+       mate-desktop-item-edit --create-new ~/Desktop/Icon.desktop
+	   Open a mate-desktop-item-edit dialog to create a launcher icon on
+	   the desktop named "Icon".
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-panel/issues
+
+AUTHORS
+   This Man Page has been updated/re-written for the MATE Desktop Environment
+       by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+       This manual page was originally written by Christian Marillat
+       <marillat@debian.org> for the Debian GNU/Linux system. (2006)
+
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+MATE Desktop Environment	4 February 2014      MATE-DESKTOP-ITEM-EDIT(1)

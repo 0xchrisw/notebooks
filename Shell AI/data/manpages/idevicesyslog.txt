@@ -1,0 +1,30 @@
+idevicesyslog(1)	    General Commands Manual	      idevicesyslog(1)
+
+NAME
+       idevicesyslog - Relay syslog of a connected device.
+
+SYNOPSIS
+       idevicesyslog [OPTIONS]
+
+DESCRIPTION
+       Relay syslog of a connected device.
+
+OPTIONS
+       -d, --debug
+	      enable communication debugging.
+
+       -u, --udid UDID
+	      target specific device by UDID.
+
+       -h, --help
+	      prints usage information.
+
+AUTHOR
+       Martin Szulecki
+
+       Man page written to conform with Debian by Julien Lavergne.
+
+ON THE WEB
+       http://libimobiledevice.org
+
+							      idevicesyslog(1)

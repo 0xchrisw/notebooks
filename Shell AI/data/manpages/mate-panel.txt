@@ -1,0 +1,61 @@
+MATE-PANEL(1)		    General Commands Manual		 MATE-PANEL(1)
+
+NAME
+       mate-panel - The Panel for the MATE Desktop Environment
+
+SYNOPSIS
+       mate-panel [OPTIONS]
+
+DESCRIPTION
+       The mate-panel program provides the panels for the the MATE Desktop
+       Environment. It is the area on your desktop from which you can run
+       applications and applets, and perform other tasks. New applets may also
+       be installed ,added to, or removed from the panels.
+
+       By default, mate-panel typically creates a panel on the top of the
+       screen with applets such as a Menu Bar, Notification Area, and Clock;
+       While creating a second panel on the bottom of the screen with a Window
+       List and a Workspace Switcher. Panels can be created, deleted, moved
+       around the desktop, and to other monitors.
+
+       This manual page documents the mate-panel command.
+
+OPTIONS
+       --replace
+	      Replace a currently running instance of mate-panel.
+
+       --reset
+	      Reset the panel configuration to the default setting.
+
+       --run-dialog
+	      Open the "Run Application" dialog, also accessible by pressing
+	      ALT+F2.
+
+       --display=DISPLAY
+	      X display to use.
+
+       -?, -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-panel/issues
+
+AUTHORS
+   This Man Page has been written for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+SEE ALSO
+   Mate Panel documentation can be found under "Help" by right-clicking on
+       mate-panel.
+       Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+
+       mate-panel-test-applets(1)
+
+MATE Desktop Environment	4 February 2014 		 MATE-PANEL(1)

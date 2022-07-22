@@ -1,0 +1,59 @@
+MATE-SCREENSAVER(1)	    General Commands Manual	   MATE-SCREENSAVER(1)
+
+NAME
+       mate-screensaver - The MATE Desktop Screensaver and Locker
+
+SYNOPSIS
+       mate-screensaver [OPTIONS]
+
+DESCRIPTION
+       MATE Screensaver is the default screen saver and locker for the MATE
+       Desktop. It is designed with simplicity and security in mind. mate-
+       screensaver integrates well with the MATE desktop, and it supports User
+       Switching and the ability to lock down configuration settings.
+
+OPTIONS
+       --display=DISPLAY
+	      X display to use.
+
+       --no-daemon
+	      Don't start as a daemon
+
+       --debug
+	      Enable debugging messages for mate-screensaver
+
+       --version
+	      Output version information and exit.
+
+       -h, --help
+	      Print standard command line options.
+
+       --help-all
+	      Print all command line options.
+
+       This program also accepts the standard GTK options.
+
+BUGS
+   Should you encounter any bugs, they may be reported at:
+       http://github.com/mate-desktop/mate-screensaver/issues
+
+AUTHORS
+   mate-screensaver is maintained by:
+       Perberos <perberos@gmail.com>
+       Steve Zesch <stevezesch2@gmail.com>
+       Stefano Karapetsas <stefano@karapetsas.com>
+
+   This Man Page has been updated for the MATE Desktop Environment by:
+       Adam Erdman <hekel@archlinux.info> (2014)
+
+HISTORY
+   gnome-screensaver was written by William Jon McCann <mccann@jhu.edu>
+   This manual page was originally written by Sven Arvidsson <sa@whiz.se>
+       (2007)
+SEE ALSO
+   Further information may also be available at: http://wiki.mate-
+       desktop.org/docs
+       mate-screensaver-command(1), mate-screensaver-preferences(1), gtk-
+       options(7)
+
+MATE Desktop Environment       13 February 2014 	   MATE-SCREENSAVER(1)

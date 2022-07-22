@@ -1,0 +1,7 @@
+BLUEMAN-REPORT(1)	    General Commands Manual	     BLUEMAN-REPORT(1)
+
+NAME
+       blueman-report - a tool to create a commented log and upload it to
+       GitHub for support or bug reports
+
+				     LOCAL		     BLUEMAN-REPORT(1)
